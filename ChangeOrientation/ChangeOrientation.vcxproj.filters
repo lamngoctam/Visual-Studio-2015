@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="0.ZhangCalibration">
+      <UniqueIdentifier>{580c3355-8f55-436d-a434-9cccdf1c65bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Linear3d">
+      <UniqueIdentifier>{c2a1f8ac-df9b-47bf-ba92-4a997bb33273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1.SFS">
+      <UniqueIdentifier>{440b0163-e251-4a3c-aca1-076cacb92026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Voxel">
+      <UniqueIdentifier>{168eedfe-69d8-4ebf-af36-c9bd37ea516b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGl">
+      <UniqueIdentifier>{5756de42-ee2f-4273-9fe4-028c035fe138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2.PCA">
+      <UniqueIdentifier>{3ac59446-dd62-4b2a-bc25-3250fc7e5c57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3.ICP">
+      <UniqueIdentifier>{239bcd93-ca42-4765-9cb3-25f4045f2cc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4.Integration">
+      <UniqueIdentifier>{6fc69bd5-7112-4f0a-813f-b23027dd839b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="5.LEGO">
+      <UniqueIdentifier>{fde377a0-82ac-4d3c-a2b7-b4a4d5cb28b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ColorVoxel">
+      <UniqueIdentifier>{2dbdb2da-2994-433a-a272-d3310c036ae9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="6.Again">
+      <UniqueIdentifier>{b3bdfea9-372a-4cf7-816f-f6d5b2e3de2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="7.NewPCA">
+      <UniqueIdentifier>{4ceb0f51-778c-4a55-a6c0-54e5c4075b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="8.NewICP">
+      <UniqueIdentifier>{4edb293a-e211-4b4e-abd8-2838bded729e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="0.ZhangCalibration\0.ZhangCalibration.cpp">
+      <Filter>0.ZhangCalibration</Filter>
+    </ClCompile>
+    <ClCompile Include="Linear3d\l3_ccolor.cpp">
+      <Filter>Linear3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Linear3d\l3_cmatrix.cpp">
+      <Filter>Linear3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Linear3d\l3_cpoint3d.cpp">
+      <Filter>Linear3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Linear3d\l3_cquat.cpp">
+      <Filter>Linear3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Linear3d\MyKdTree.cpp">
+      <Filter>Linear3d</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\0.SFS.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\1.Read Silhouette.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\2.CalcART.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\3.Make Octree Model.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\4.Octree To Voxel.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpixel.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Voxel\Color_hsv.cpp">
+      <Filter>Voxel</Filter>
+    </ClCompile>
+    <ClCompile Include="Voxel\IntegVoxel.cpp">
+      <Filter>Voxel</Filter>
+    </ClCompile>
+    <ClCompile Include="Voxel\Labeling.cpp">
+      <Filter>Voxel</Filter>
+    </ClCompile>
+    <ClCompile Include="Voxel\Model.cpp">
+      <Filter>Voxel</Filter>
+    </ClCompile>
+    <ClCompile Include="Voxel\OctVoxel.cpp">
+      <Filter>Voxel</Filter>
+    </ClCompile>
+    <ClCompile Include="Voxel\OnetoOne.cpp">
+      <Filter>Voxel</Filter>
+    </ClCompile>
+    <ClCompile Include="Voxel\Voxel.cpp">
+      <Filter>Voxel</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\gl_screenshot.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\gl2ps.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGL.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGLDraw.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGLWindow0.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\RunOpenGL.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGLWindow1.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="Jacobi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGLWindowDown.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGLWindow_Check.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\Save_Octrees.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\Rotated_Function.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\Rodrigues_Rotation.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\Quaternion_Rotation.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\Find_minmax_rotated.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\Check_Plane.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\CheckPlane2.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\Octree_to_voxel.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="1.SFS\Divided_lowerLV_Octree.cpp">
+      <Filter>1.SFS</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGLWindow2.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGLWindow3.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="Index3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="V_ID_F.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexPro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lego.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BrickTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="2.PCA\0.PCA.cpp">
+      <Filter>2.PCA</Filter>
+    </ClCompile>
+    <ClCompile Include="2.PCA\1.Find Outside Voxel1.cpp">
+      <Filter>2.PCA</Filter>
+    </ClCompile>
+    <ClCompile Include="2.PCA\2.CalcPA.cpp">
+      <Filter>2.PCA</Filter>
+    </ClCompile>
+    <ClCompile Include="2.PCA\3.CalcEigen.cpp">
+      <Filter>2.PCA</Filter>
+    </ClCompile>
+    <ClCompile Include="2.PCA\4.MakeMatrix_PCA.cpp">
+      <Filter>2.PCA</Filter>
+    </ClCompile>
+    <ClCompile Include="3.ICP\0.ICP.cpp">
+      <Filter>3.ICP</Filter>
+    </ClCompile>
+    <ClCompile Include="3.ICP\1.ICPfunc.cpp">
+      <Filter>3.ICP</Filter>
+    </ClCompile>
+    <ClCompile Include="3.ICP\2.MakeMatrixOfICP.cpp">
+      <Filter>3.ICP</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\0.Integration.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\1.IntegFunc.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\2.ElimIsoVoxels.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\2.ElimIsoVoxels_LUT.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\3.ProposedMethod.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\4.Coloring.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\5.ReadColorImage.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\6.OutputOff.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\7.ModeColors.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\CalculateDistanceVoxels.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\CalculateNormalVoxels.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\FindOutsideVoxel.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\FreeMemory.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorVoxel\RGBtoHue.cpp">
+      <Filter>ColorVoxel</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorVoxel\RGBtoLab.cpp">
+      <Filter>ColorVoxel</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\Find_max_min_new.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\Optimated_Rotated.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="6.Again\Rotated_Integ.cpp">
+      <Filter>6.Again</Filter>
+    </ClCompile>
+    <ClCompile Include="7.NewPCA\0.PCA2.cpp">
+      <Filter>7.NewPCA</Filter>
+    </ClCompile>
+    <ClCompile Include="8.NewICP\0.PCA3.cpp">
+      <Filter>8.NewICP</Filter>
+    </ClCompile>
+    <ClCompile Include="8.NewICP\Rotated_Integ2.cpp">
+      <Filter>8.NewICP</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\MoveDown.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\0.BuildingInstructions.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\3.CountNum_of_Area4.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\9.Delete_Iso_Blocks.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\10.L_to_1×1_1×2.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\11.1×1_1×2_to_1×2_1×3.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\12.1×1_1×3_to_1×4.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\13.1×1_2×2_to_1×3_1×2.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\14.1×2_2×2_to_1×4_2×2_2×3.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\15.1×2_2×3_to_2×4.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\16.new1×2_2×2_to_2×2_2×3.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\17.2×2_to_2×4.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\ColoringBlock.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\confirmation.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\Output2LDD.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="5.LEGO\pillar.cpp">
+      <Filter>5.LEGO</Filter>
+    </ClCompile>
+    <ClCompile Include="Brick.cpp">
+      <Filter>Voxel</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGL\OpenGLWindow4.cpp">
+      <Filter>OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\Integ_Rotate.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+    <ClCompile Include="4.Integration\CheckContourInteg.cpp">
+      <Filter>4.Integration</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="func.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Linear3d\l3.h">
+      <Filter>Linear3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Linear3d\l3_ccolor.h">
+      <Filter>Linear3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Linear3d\l3_cmatrix.h">
+      <Filter>Linear3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Linear3d\l3_cpoint3d.h">
+      <Filter>Linear3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Linear3d\l3_cquat.h">
+      <Filter>Linear3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Linear3d\MyKdTree.h">
+      <Filter>Linear3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Voxel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpixel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\gl_screenshot.h">
+      <Filter>OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\gl2ps.h">
+      <Filter>OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\OpenGL.h">
+      <Filter>OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\OpenGLprimitive.h">
+      <Filter>OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\OpenGLWindow0.h">
+      <Filter>OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGL\OpenGLWindowDown.h">
+      <Filter>OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="Index3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="V_ID_F.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexPro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lego.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BrickTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Brick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

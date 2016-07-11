@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F2B778DD-266C-44C0-9462-81AEE382EC27}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ChangeOrientation</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\opencv\build\x64\vc12\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_calib3d2410.lib;opencv_contrib2410.lib;opencv_core2410.lib;opencv_features2d2410.lib;opencv_flann2410.lib;opencv_gpu2410.lib;opencv_highgui2410.lib;opencv_imgproc2410.lib;opencv_legacy2410.lib;opencv_ml2410.lib;opencv_nonfree2410.lib;opencv_objdetect2410.lib;opencv_photo2410.lib;opencv_stitching2410.lib;opencv_superres2410.lib;opencv_ts2410.lib;opencv_video2410.lib;opencv_videostab2410.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\opencv\build\include\opencv;C:\opencv\build\include\opencv2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\opencv\build\x64\vc12\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_calib3d2410.lib;opencv_contrib2410.lib;opencv_core2410.lib;opencv_features2d2410.lib;opencv_flann2410.lib;opencv_gpu2410.lib;opencv_highgui2410.lib;opencv_imgproc2410.lib;opencv_legacy2410.lib;opencv_ml2410.lib;opencv_nonfree2410.lib;opencv_objdetect2410.lib;opencv_photo2410.lib;opencv_stitching2410.lib;opencv_superres2410.lib;opencv_ts2410.lib;opencv_video2410.lib;opencv_videostab2410.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="0.ZhangCalibration\0.ZhangCalibration.cpp" />
+    <ClCompile Include="1.SFS\0.SFS.cpp" />
+    <ClCompile Include="1.SFS\1.Read Silhouette.cpp" />
+    <ClCompile Include="1.SFS\2.CalcART.cpp" />
+    <ClCompile Include="1.SFS\3.Make Octree Model.cpp" />
+    <ClCompile Include="1.SFS\4.Octree To Voxel.cpp" />
+    <ClCompile Include="1.SFS\CheckPlane2.cpp" />
+    <ClCompile Include="1.SFS\Check_Plane.cpp" />
+    <ClCompile Include="1.SFS\Divided_lowerLV_Octree.cpp" />
+    <ClCompile Include="1.SFS\Find_minmax_rotated.cpp" />
+    <ClCompile Include="1.SFS\Octree_to_voxel.cpp" />
+    <ClCompile Include="1.SFS\Quaternion_Rotation.cpp" />
+    <ClCompile Include="1.SFS\Rodrigues_Rotation.cpp" />
+    <ClCompile Include="1.SFS\Rotated_Function.cpp" />
+    <ClCompile Include="1.SFS\Save_Octrees.cpp" />
+    <ClCompile Include="2.PCA\0.PCA.cpp" />
+    <ClCompile Include="2.PCA\1.Find Outside Voxel1.cpp" />
+    <ClCompile Include="2.PCA\2.CalcPA.cpp" />
+    <ClCompile Include="2.PCA\3.CalcEigen.cpp" />
+    <ClCompile Include="2.PCA\4.MakeMatrix_PCA.cpp" />
+    <ClCompile Include="3.ICP\0.ICP.cpp" />
+    <ClCompile Include="3.ICP\1.ICPfunc.cpp" />
+    <ClCompile Include="3.ICP\2.MakeMatrixOfICP.cpp" />
+    <ClCompile Include="4.Integration\0.Integration.cpp" />
+    <ClCompile Include="4.Integration\1.IntegFunc.cpp" />
+    <ClCompile Include="4.Integration\2.ElimIsoVoxels.cpp" />
+    <ClCompile Include="4.Integration\2.ElimIsoVoxels_LUT.cpp" />
+    <ClCompile Include="4.Integration\3.ProposedMethod.cpp" />
+    <ClCompile Include="4.Integration\4.Coloring.cpp" />
+    <ClCompile Include="4.Integration\5.ReadColorImage.cpp" />
+    <ClCompile Include="4.Integration\6.OutputOff.cpp" />
+    <ClCompile Include="4.Integration\7.ModeColors.cpp" />
+    <ClCompile Include="4.Integration\CalculateDistanceVoxels.cpp" />
+    <ClCompile Include="4.Integration\CalculateNormalVoxels.cpp" />
+    <ClCompile Include="4.Integration\CheckContourInteg.cpp" />
+    <ClCompile Include="4.Integration\FindOutsideVoxel.cpp" />
+    <ClCompile Include="4.Integration\Find_max_min_new.cpp" />
+    <ClCompile Include="4.Integration\FreeMemory.cpp" />
+    <ClCompile Include="4.Integration\Integ_Rotate.cpp" />
+    <ClCompile Include="4.Integration\MoveDown.cpp" />
+    <ClCompile Include="4.Integration\Optimated_Rotated.cpp" />
+    <ClCompile Include="5.LEGO\0.BuildingInstructions.cpp" />
+    <ClCompile Include="5.LEGO\10.L_to_1×1_1×2.cpp" />
+    <ClCompile Include="5.LEGO\11.1×1_1×2_to_1×2_1×3.cpp" />
+    <ClCompile Include="5.LEGO\12.1×1_1×3_to_1×4.cpp" />
+    <ClCompile Include="5.LEGO\13.1×1_2×2_to_1×3_1×2.cpp" />
+    <ClCompile Include="5.LEGO\14.1×2_2×2_to_1×4_2×2_2×3.cpp" />
+    <ClCompile Include="5.LEGO\15.1×2_2×3_to_2×4.cpp" />
+    <ClCompile Include="5.LEGO\16.new1×2_2×2_to_2×2_2×3.cpp" />
+    <ClCompile Include="5.LEGO\17.2×2_to_2×4.cpp" />
+    <ClCompile Include="5.LEGO\3.CountNum_of_Area4.cpp" />
+    <ClCompile Include="5.LEGO\9.Delete_Iso_Blocks.cpp" />
+    <ClCompile Include="5.LEGO\ColoringBlock.cpp" />
+    <ClCompile Include="5.LEGO\confirmation.cpp" />
+    <ClCompile Include="5.LEGO\Output2LDD.cpp" />
+    <ClCompile Include="5.LEGO\pillar.cpp" />
+    <ClCompile Include="6.Again\Rotated_Integ.cpp" />
+    <ClCompile Include="7.NewPCA\0.PCA2.cpp" />
+    <ClCompile Include="8.NewICP\0.PCA3.cpp" />
+    <ClCompile Include="8.NewICP\Rotated_Integ2.cpp" />
+    <ClCompile Include="Brick.cpp" />
+    <ClCompile Include="BrickTable.cpp" />
+    <ClCompile Include="ColorVoxel\RGBtoHue.cpp" />
+    <ClCompile Include="ColorVoxel\RGBtoLab.cpp" />
+    <ClCompile Include="Cpixel.cpp" />
+    <ClCompile Include="Index3D.cpp" />
+    <ClCompile Include="Jacobi.cpp" />
+    <ClCompile Include="Lego.cpp" />
+    <ClCompile Include="Linear3d\l3_ccolor.cpp" />
+    <ClCompile Include="Linear3d\l3_cmatrix.cpp" />
+    <ClCompile Include="Linear3d\l3_cpoint3d.cpp" />
+    <ClCompile Include="Linear3d\l3_cquat.cpp" />
+    <ClCompile Include="Linear3d\MyKdTree.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="OpenGL\gl2ps.cpp" />
+    <ClCompile Include="OpenGL\gl_screenshot.cpp" />
+    <ClCompile Include="OpenGL\OpenGL.cpp" />
+    <ClCompile Include="OpenGL\OpenGLDraw.cpp" />
+    <ClCompile Include="OpenGL\OpenGLWindow0.cpp" />
+    <ClCompile Include="OpenGL\OpenGLWindow1.cpp" />
+    <ClCompile Include="OpenGL\OpenGLWindow2.cpp" />
+    <ClCompile Include="OpenGL\OpenGLWindow3.cpp" />
+    <ClCompile Include="OpenGL\OpenGLWindow4.cpp" />
+    <ClCompile Include="OpenGL\OpenGLWindowDown.cpp" />
+    <ClCompile Include="OpenGL\OpenGLWindow_Check.cpp" />
+    <ClCompile Include="OpenGL\RunOpenGL.cpp" />
+    <ClCompile Include="VertexPro.cpp" />
+    <ClCompile Include="Voxel\Color_hsv.cpp" />
+    <ClCompile Include="Voxel\IntegVoxel.cpp" />
+    <ClCompile Include="Voxel\Labeling.cpp" />
+    <ClCompile Include="Voxel\Model.cpp" />
+    <ClCompile Include="Voxel\OctVoxel.cpp" />
+    <ClCompile Include="Voxel\OnetoOne.cpp" />
+    <ClCompile Include="Voxel\Voxel.cpp" />
+    <ClCompile Include="V_ID_F.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Brick.h" />
+    <ClInclude Include="BrickTable.h" />
+    <ClInclude Include="Cpixel.h" />
+    <ClInclude Include="func.h" />
+    <ClInclude Include="Index3D.h" />
+    <ClInclude Include="Lego.h" />
+    <ClInclude Include="Linear3d\l3.h" />
+    <ClInclude Include="Linear3d\l3_ccolor.h" />
+    <ClInclude Include="Linear3d\l3_cmatrix.h" />
+    <ClInclude Include="Linear3d\l3_cpoint3d.h" />
+    <ClInclude Include="Linear3d\l3_cquat.h" />
+    <ClInclude Include="Linear3d\MyKdTree.h" />
+    <ClInclude Include="OpenGL\gl2ps.h" />
+    <ClInclude Include="OpenGL\gl_screenshot.h" />
+    <ClInclude Include="OpenGL\OpenGL.h" />
+    <ClInclude Include="OpenGL\OpenGLprimitive.h" />
+    <ClInclude Include="OpenGL\OpenGLWindow0.h" />
+    <ClInclude Include="OpenGL\OpenGLWindowDown.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="VertexPro.h" />
+    <ClInclude Include="Voxel.h" />
+    <ClInclude Include="V_ID_F.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
