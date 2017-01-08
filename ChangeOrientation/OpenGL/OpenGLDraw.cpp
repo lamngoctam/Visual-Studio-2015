@@ -1,4 +1,4 @@
-﻿
+//
 #include "../stdafx.h"
 #include "OpenGL.h"
 #include "OpenGLprimitive.h"
@@ -10,8 +10,6 @@ extern OpenGL GLSettings4;
 extern OctVoxel Angle_;
 extern CVector3d center_boundingbox;
 extern vector<CVector3d> New_peak_octrees;
-
-
 
 void GradientBackGround(float *tcolor, float *bcolor) {
 	// 
@@ -87,8 +85,8 @@ void DrawBoundingbox(CVector3d MaxPt, CVector3d MinPt) {
 //#################################################
 void ConclusiveAxis(void) {
 	glLineWidth(1.0);
-	double radius = 1.0;		//ƒpƒCƒv‚Ì‘¾‚³
-	double stringspace = 4.0;	//•¶Žš‚ÆŽ²‚ÌŒ„ŠÔ
+	double radius = 1.0;		
+	double stringspace = 4.0;	
 
 	CVector3d O(0.0, 0.0, 0.0);		CVector3d X(1.0, 0.0, 0.0);
 	CVector3d Y(0.0, 1.0, 0.0);		CVector3d Z(0.0, 0.0, 1.0);
@@ -207,6 +205,7 @@ void DrawFaceOctree_SFS_UP(OctVoxel &box)
 	}
 	glEnd();
 }
+//
 void DrawFaceOctreeModel_SFS_UP(vector<OctVoxel>& Octree)
 {
 	int line[12][2] =
@@ -318,7 +317,6 @@ void DrawWire_BoundingBox_DOWN(OctVoxel &box)
 }
 
 
-
 //###################################################
 //                 LEGO    PCA Rotated                
 //###################################################
@@ -375,7 +373,6 @@ void DrawFaceVoxelModel(vector<Voxel>&m) {
 		DrawFaceOctree_PCA(*it);
 	}
 }
-
 
 
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -574,21 +571,21 @@ void DrawFaceVoxel(CVector3d* vertexW)
 {
 
 	int face[6][4] = {
-		{ 0, 3, 2, 1 },		//Z|•ûŒü
-		{ 1, 2, 6, 5 },		//X{•ûŒü
-		{ 2, 3, 6, 7 },		//Y+•ûŒü
-		{ 3, 0, 4, 7 },		//X|•ûŒü
-		{ 0, 1, 5, 4 },		//Y[•ûŒü
-		{ 4, 5, 6, 7 }			//Z{•ûŒü
+		{ 0, 3, 2, 1 },		//Z
+		{ 1, 2, 6, 5 },		//X
+		{ 2, 3, 6, 7 },		//Y
+		{ 3, 0, 4, 7 },		//X
+		{ 0, 1, 5, 4 },		//Y
+		{ 4, 5, 6, 7 }			//
 	};
 
 	GLdouble normal[6][3] = {
-		{ 0.0, 0.0, -1.0 },		//Z|•ûŒü
-		{ 1.0, 0.0, 0.0 },			//X{•ûŒü
-		{ 0.0, 1.0, 0.0 },			//Y{•ûŒü
-		{ -1.0, 0.0, 0.0 },		//X[•ûŒü
-		{ 0.0, -1.0, 0.0 },		//Y[•ûŒü
-		{ 0.0, 0.0, 1.0 }			//Z{•ûŒü
+		{ 0.0, 0.0, -1.0 },		//Z
+		{ 1.0, 0.0, 0.0 },	        //X
+		{ 0.0, 1.0, 0.0 },		//Y
+		{ -1.0, 0.0, 0.0 },		//X
+		{ 0.0, -1.0, 0.0 },		//Y
+		{ 0.0, 0.0, 1.0 }		//Z
 	};
 
 	glBegin(GL_QUADS);
@@ -1006,7 +1003,7 @@ void Drawline(Model& integ, int num) {
 	GLfloat white[4] = { 1.0, 1.0, 1.0, 1.0 };
 	GLfloat black[4] = { 0.0, 0.0, 0.0, 1.0 };
 	GLfloat shininess = 10;
-	GLfloat light0_position[4] = { (float)GLSettings2.m_Eye.x, (float)GLSettings2.m_Eye.y, (float)GLSettings2.m_Eye.z, 1.0f };//�����̈ʒu �� ���_�̈ʒu
+	GLfloat light0_position[4] = { (float)GLSettings2.m_Eye.x, (float)GLSettings2.m_Eye.y, (float)GLSettings2.m_Eye.z, 1.0f };
 
 	CColor Cblack(1.0, 0.0, 0.0);
 	CColor Cblue(0.0, 0.0, 1.0);
@@ -1043,7 +1040,7 @@ void DrawIsoVoxels(Model& integ)
 	GLfloat white[4] = { 1.0, 1.0, 1.0, 1.0 };
 	GLfloat black[4] = { 0.0, 0.0, 0.0, 1.0 };
 	GLfloat shininess = 10;
-	GLfloat light0_position[4] = { (float)GLSettings2.m_Eye.x, (float)GLSettings2.m_Eye.y, (float)GLSettings2.m_Eye.z, 1.0f };//�����̈ʒu �� ���_�̈ʒu
+	GLfloat light0_position[4] = { (float)GLSettings2.m_Eye.x, (float)GLSettings2.m_Eye.y, (float)GLSettings2.m_Eye.z, 1.0f };
 
 	CColor Cblack(0.0, 0.0, 0.0);
 	CColor Cred(1.0, 0.0, 0.0);
@@ -1093,22 +1090,22 @@ void DrawGrid(Model& m, int Znum)
 	glEnd();
 
 }
-void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•ª‚¾‚¯•K—v‚É‚È‚é
+void DrawSurfSquare(Model& m, Lego*** block, int Znum)
 {
 	//GLfloat white[4] = {1.0, 1.0, 1.0, 1.0};
 	//GLfloat black[4] = {0.0, 0.0, 0.0, 1.0};
-	//GLfloat shininess = 10;		//Å‘å128iƒvƒ‰ƒXƒ`ƒbƒN‚Ìê‡‚Í‚P‚O`‚S‚Oj
-	//GLfloat light0_position[4] = { (float)GLSettings4.m_Eye.x, (float)GLSettings4.m_Eye.y, (float)GLSettings4.m_Eye.z, 1.0f };//ŒõŒ¹‚ÌˆÊ’u  Ž‹“_‚ÌˆÊ’u
+	//GLfloat shininess = 10;		
+	//GLfloat light0_position[4] = { (float)GLSettings4.m_Eye.x, (float)GLSettings4.m_Eye.y, (float)GLSettings4.m_Eye.z, 1.0f };
 
-	//ŒõŒ¹‚ÌÝ’è--------------------------------------
+	//
 	//glEnable(GL_DEPTH_TEST);
 	//glEnable( GL_NORMALIZE );
 	//glEnable(GL_LIGHTING);
-	//glEnable(GL_LIGHT0);			//ŒõŒ¹0‚ð—˜—p
+	//glEnable(GL_LIGHT0);			
 
-	//glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				//ƒ‰ƒCƒg0‚ÌˆÊ’u‚ðÝ’è‚·‚é
-	//glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
-	//glLightfv(GL_LIGHT0, GL_SPECULAR, white);								//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
+	//glLightfv(GL_LIGHT0, GL_POSITION, light0_position);			
+	//glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);	
+	//glLightfv(GL_LIGHT0, GL_SPECULAR, white);								
 
 	//GLfloat color[4];
 
@@ -1125,11 +1122,10 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 		for (int y(1); y<m.num[1] - 1; y++)
 		{
 			//###################################
-			//‚P~‚P‚Ìê‡
+			//P-P
 			//###################################
 			if (block[x][y][Znum].flag == 1)
 			{
-				//”½ŽžŒv‰ñ‚è
 				//color[0] = (float)m.Voxel_colors[x][y][Znum].r;
 				//color[1] = (float)m.Voxel_colors[x][y][Znum].g;
 				//color[2] = (float)m.Voxel_colors[x][y][Znum].b;
@@ -1157,7 +1153,7 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 				glColor4d(m.Voxel_colors[x][y][Znum].r, m.Voxel_colors[x][y][Znum].g, m.Voxel_colors[x][y][Znum].b, 0.8);
 
 				//###################################
-				//‚P~‚Q‚Ìê‡
+				//P-Q
 				//###################################
 				//else if(block[x][y][Znum].flag == 12 && block[x][y][Znum].corner == 1)
 				if (block[x][y][Znum].flag == 12)
@@ -1181,7 +1177,7 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 					}
 				}
 				//###################################
-				//‚P~‚R‚Ìê‡
+				//P-R
 				//###################################
 				//else if(block[x][y][Znum].flag == 13 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 13)
@@ -1198,7 +1194,7 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 							continue;
 						}
 					}
-					//‚P~‚R‚ª‚˜•ûŒü‚Ìê‡
+					
 					if (x + 2 < m.num[0])
 					{
 						if (block[x + 2][y][Znum].flag == 13 && block[x][y][Znum].ID == block[x + 2][y][Znum].ID && block[x + 2][y][Znum].corner == 2)
@@ -1212,7 +1208,6 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 				}
 
 				//###################################
-				//‚P~‚S‚Ìê‡
 				//###################################
 				//else if(block[x][y][Znum].flag == 14 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 14)
@@ -1242,7 +1237,7 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 					}
 				}
 				//###################################
-				//‚Q~‚Q‚Ìê‡
+				//‚Q-Q
 				//###################################
 				//else if(block[x][y][Znum].flag == 22 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 22)
@@ -1261,7 +1256,7 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 				//else if(block[x][y][Znum].flag == 23 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 23)
 				{
-					//‚Q~‚R‚ª‚™•ûŒü‚Ìê‡
+					
 					if (y + 2 < m.num[1])
 					{
 						if (block[x + 1][y + 2][Znum].flag == 23 && block[x][y][Znum].ID == block[x + 1][y + 2][Znum].ID && block[x + 1][y + 2][Znum].corner == 2)
@@ -1273,7 +1268,7 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 							continue;
 						}
 					}
-					//‚Q~‚R‚ª‚˜•ûŒü‚Ìê‡
+					
 					if (x + 2 < m.num[0])
 					{
 						if (block[x + 2][y + 1][Znum].flag == 23 && block[x][y][Znum].ID == block[x + 2][y + 1][Znum].ID && block[x + 2][y + 1][Znum].corner == 2)
@@ -1286,7 +1281,7 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 					}
 				}
 				//###################################
-				//‚Q~‚S‚Ìê‡
+				//
 				//###################################
 				//else if(block[x][y][Znum].flag == 24 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 24)
@@ -1324,10 +1319,10 @@ void DrawSurfSquare(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•
 }
 
 //###################################################
-//                                      ƒuƒƒbƒNƒ‚ƒfƒ‹‚Ì‚ ‚é’f–Ê‚Ì•½–Ê}                                      
+//                                                                   
 //###################################################
 
-void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•ª‚¾‚¯•K—v‚É‚È‚é
+void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)
 {
 	glColor3d(0.0, 0.0, 0.9);
 	glLineWidth(7.0);
@@ -1337,11 +1332,11 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 		for (int y(1); y<m.num[1] - 1; y++)
 		{
 			//###################################
-			//‚P~‚P‚Ìê‡
+			//P~P
 			//###################################
 			if (block[x][y][Znum].flag == 1)
 			{
-				//”½ŽžŒv‰ñ‚è
+			
 				glBegin(GL_LINE_LOOP);
 				glVertex2i(x, y);
 				glVertex2i(x + 1, y);
@@ -1354,12 +1349,12 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 				if (block[x][y][Znum].corner != 1)
 					continue;
 				//###################################
-				//‚P~‚Q‚Ìê‡
+				//P~Q
 				//###################################
 				//else if(block[x][y][Znum].flag == 12 && block[x][y][Znum].corner == 1)
 				if (block[x][y][Znum].flag == 12)
 				{
-					//‚P~‚Q‚ª‚™•ûŒü‚Ìê‡
+					//P~Q
 					if (block[x][y + 1][Znum].flag == 12 && block[x][y][Znum].ID == block[x][y + 1][Znum].ID && block[x][y + 1][Znum].corner == 2)
 					{
 						glBegin(GL_LINE_LOOP);
@@ -1369,7 +1364,7 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 						glVertex2i(x, y + 2);
 						glEnd();
 					}
-					//‚P~‚Q‚ª‚˜•ûŒü‚Ìê‡
+					//P~Q
 					else if (block[x + 1][y][Znum].flag == 12 && block[x][y][Znum].ID == block[x + 1][y][Znum].ID && block[x + 1][y][Znum].corner == 2)
 					{
 						glBegin(GL_LINE_LOOP);
@@ -1381,12 +1376,12 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 					}
 				}
 				//###################################
-				//‚P~‚R‚Ìê‡
+				//
 				//###################################
 				//else if(block[x][y][Znum].flag == 13 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 13)
 				{
-					//‚P~‚R‚ª‚™•ûŒü‚Ìê‡
+					
 					if (y + 2 < m.num[1])
 					{
 						if (block[x][y + 2][Znum].flag == 13 && block[x][y][Znum].ID == block[x][y + 2][Znum].ID && block[x][y + 2][Znum].corner == 2)
@@ -1400,7 +1395,7 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 							continue;
 						}
 					}
-					//‚P~‚R‚ª‚˜•ûŒü‚Ìê‡
+					
 					if (x + 2 < m.num[0])
 					{
 						if (block[x + 2][y][Znum].flag == 13 && block[x][y][Znum].ID == block[x + 2][y][Znum].ID && block[x + 2][y][Znum].corner == 2)
@@ -1416,12 +1411,12 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 				}
 
 				//###################################
-				//‚P~‚S‚Ìê‡
+				//P~S
 				//###################################
 				//else if(block[x][y][Znum].flag == 14 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 14)
 				{
-					//‚P~‚S‚ª‚™•ûŒü‚Ìê‡
+				
 					if (y + 3 < m.num[1])
 					{
 						if (block[x][y + 3][Znum].flag == 14 && block[x][y][Znum].ID == block[x][y + 3][Znum].ID && block[x][y + 3][Znum].corner == 2)
@@ -1435,7 +1430,7 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 							continue;
 						}
 					}
-					//‚P~‚S‚ª‚˜•ûŒü‚Ìê‡
+				
 					if (x + 3 < m.num[0])
 					{
 						if (block[x + 3][y][Znum].flag == 14 && block[x][y][Znum].ID == block[x + 3][y][Znum].ID && block[x + 3][y][Znum].corner == 2)
@@ -1450,7 +1445,7 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 					}
 				}
 				//###################################
-				//‚Q~‚Q‚Ìê‡
+				//Q~Q
 				//###################################
 				//else if(block[x][y][Znum].flag == 22 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 22)
@@ -1466,12 +1461,12 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 					}
 				}
 				//###################################
-				//‚Q~‚R‚Ìê‡
+				//
 				//###################################
 				//else if(block[x][y][Znum].flag == 23 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 23)
 				{
-					//‚Q~‚R‚ª‚™•ûŒü‚Ìê‡
+					
 					if (y + 2 < m.num[1])
 					{
 						if (block[x + 1][y + 2][Znum].flag == 23 && block[x][y][Znum].ID == block[x + 1][y + 2][Znum].ID && block[x + 1][y + 2][Znum].corner == 2)
@@ -1485,7 +1480,7 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 							continue;
 						}
 					}
-					//‚Q~‚R‚ª‚˜•ûŒü‚Ìê‡
+					//
 					if (x + 2 < m.num[0])
 					{
 						if (block[x + 2][y + 1][Znum].flag == 23 && block[x][y][Znum].ID == block[x + 2][y + 1][Znum].ID && block[x + 2][y + 1][Znum].corner == 2)
@@ -1500,12 +1495,12 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 					}
 				}
 				//###################################
-				//‚Q~‚S‚Ìê‡
+				//
 				//###################################
 				//else if(block[x][y][Znum].flag == 24 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 24)
 				{
-					//‚Q~‚S‚ª‚™•ûŒü‚Ìê‡
+				
 					if (y + 3 < m.num[1])
 					{
 						if (block[x + 1][y + 3][Znum].flag == 24 && block[x][y][Znum].ID == block[x + 1][y + 3][Znum].ID && block[x + 1][y + 3][Znum].corner == 2)
@@ -1519,7 +1514,7 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 							continue;
 						}
 					}
-					//‚Q~‚S‚ª‚˜•ûŒü‚Ìê‡
+					
 					if (x + 3 < m.num[0])
 					{
 						if (block[x + 3][y + 1][Znum].flag == 24 && block[x][y][Znum].ID == block[x + 3][y + 1][Znum].ID && block[x + 3][y + 1][Znum].corner == 2)
@@ -1536,54 +1531,54 @@ void DrawBuildingInstruction(Model& m, Lego*** block, int Znum)//’f–Ê}‚
 			}
 		}
 	}
-	//•¶Žš‚ð•\Ž¦
+	
 	glLineWidth(2.0);
-	char buf[5];		//o—Í‚·‚é•¶Žš‚Ì•Ï”
+	char buf[5];	
 	CVector3d v(-1.0, -1.0, 0.0);
-	sprintf(buf, "%d", Znum);	//o—Í•¶Žš‚ð•Ï”‚É‘ã“ü
-	glColor3d(0.0, 0.0, 0.0);		//•¶Žš‚ÌF
+	sprintf(buf, "%d", Znum);	
+	glColor3d(0.0, 0.0, 0.0);		
 	DrawString(buf, v, GLUT_BITMAP_TIMES_ROMAN_24, GL2PS_TEXT_BL);
 
 }
 
 
 //#############################################
-//                            ƒuƒƒbƒNƒ‚ƒfƒ‹‚Ì‚ ‚é‘w‚Ì•`‰æ                                       
+//                                                            
 //#############################################
 
-void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•ª‚¾‚¯•K—v‚É‚È‚é
+void DrawBlocks_3D(Model& m, Lego*** block, int Znum)
 {
-	CVector3d scale_11(1.0, 1.0, 1.2);			//‚P~‚P‚ÌƒuƒƒbƒN‚Ìk¬Šg‘å”{—¦
+	CVector3d scale_11(1.0, 1.0, 1.2);			
 	CVector3d scale_12_y(1.0, 2.0, 1.2);		//
 	CVector3d scale_12_x(2.0, 1.0, 1.2);		//
 	CVector3d scale_13_y(1.0, 3.0, 1.2);		//
 	CVector3d scale_13_x(3.0, 1.0, 1.2);		//
 	CVector3d scale_14_y(1.0, 4.0, 1.2);		//
 	CVector3d scale_14_x(4.0, 1.0, 1.2);		//
-	CVector3d scale_22(2.0, 2.0, 1.2);			//
+	CVector3d scale_22(2.0, 2.0, 1.2);		//
 	CVector3d scale_23_y(2.0, 3.0, 1.2);		//
 	CVector3d scale_23_x(3.0, 2.0, 1.2);		//
-	CVector3d scale_24_y(2.0, 4.0, 1.2);		//‚Q~‚Si‚™•ûŒü‚É’·‚¢j‚ÌƒuƒƒbƒN‚Ìk¬Šg‘å”{—¦
+	CVector3d scale_24_y(2.0, 4.0, 1.2);		//
 	CVector3d scale_24_x(4.0, 2.0, 1.2);		//
 
 	CVector3d center;
 	GLfloat color[4] = { 0.0, 0.0, 0.0, 1.0 };
 	GLfloat white[4] = { 1.0, 1.0, 1.0, 1.0 };
 	GLfloat black[4] = { 0.0, 0.0, 0.0, 1.0 };
-	GLfloat shininess = 30;		//Å‘å128iƒvƒ‰ƒXƒ`ƒbƒN‚Ìê‡‚Í‚P‚O`‚S‚Oj
-	GLfloat light0_position[4] = { (float)GLSettings4.m_Eye.x, (float)GLSettings4.m_Eye.y, (float)GLSettings4.m_Eye.z, 1.0f };//ŒõŒ¹‚ÌˆÊ’u  Ž‹“_‚ÌˆÊ’u
+	GLfloat shininess = 30;		
+	GLfloat light0_position[4] = { (float)GLSettings4.m_Eye.x, (float)GLSettings4.m_Eye.y, (float)GLSettings4.m_Eye.z, 1.0f };
 
 																															  //ŒõŒ¹‚ÌÝ’è--------------------------------------
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_NORMALIZE);
 	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);			//ŒõŒ¹0‚ð—˜—p
+	glEnable(GL_LIGHT0);			
 
-	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				//ƒ‰ƒCƒg0‚ÌˆÊ’u‚ðÝ’è‚·‚é
-	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
-	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
+	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				
+	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		
+	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								
 
-																			//‘SƒuƒƒbƒN‚É‹¤’Ê‚Ìƒ}ƒeƒŠƒAƒ‹‚ÌÝ’è
+																			
 	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
 	glMaterialf(GL_FRONT, GL_SHININESS, shininess);
 
@@ -1594,17 +1589,14 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 		for (int y(1); y<m.num[1] - 1; y++)
 		{
 			//###################################
-			//‚P~‚P‚Ìê‡
+			//P~P
 			//###################################
 			if (block[x][y][Znum].flag == 1)
 			{
-				//”½ŽžŒv‰ñ‚è
-				//ƒuƒƒbƒN‚Ì’†S(x+0.5, y+0.5)
-				//‚˜A‚™A‚š•ûŒü‚ÌŠg‘å‚Í‰½”{‚©
 				center.x = x + 0.5;
 				center.y = y + 0.5;
 				center.z = 0.6;
-				//ƒJƒ‰[‚ÌƒuƒƒbƒN
+			
 				color[0] = (float)m.Voxel_colors[x][y][Znum].r;
 				color[1] = (float)m.Voxel_colors[x][y][Znum].g;
 				color[2] = (float)m.Voxel_colors[x][y][Znum].b;
@@ -1612,7 +1604,7 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 					glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
 					DrawSolidBlock(center, scale_11);
 				}
-				//•‚¢ƒƒCƒ„[
+				
 				glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, black);
 				DrawWireBlock(center, scale_11);
 			}
@@ -1622,7 +1614,7 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 					continue;
 
 				//###################################
-				//‚P~‚Q‚Ìê‡
+				//P~Q
 				//###################################
 				//else if(block[x][y][Znum].flag == 12 && block[x][y][Znum].corner == 1)
 				if (block[x][y][Znum].flag == 12)
@@ -1644,7 +1636,7 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 						DrawWireBlock(center, scale_12_y);
 						continue;
 					}
-					//‚P~‚Q‚ª‚˜•ûŒü‚Ìê‡
+					
 					if (block[x + 1][y][Znum].flag == 12 && block[x][y][Znum].ID == block[x + 1][y][Znum].ID && block[x + 1][y][Znum].corner == 2)
 					{
 						center.x = x + 1.0;
@@ -1662,12 +1654,12 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 					}
 				}
 				//###################################
-				//‚P~‚R‚Ìê‡
+				//
 				//###################################
 				//else if(block[x][y][Znum].flag == 13 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 13)
 				{
-					//‚P~‚R‚ª‚™•ûŒü‚Ìê‡
+				
 					if (y + 2 < m.num[1])
 					{
 						if (block[x][y + 2][Znum].flag == 13 && block[x][y][Znum].ID == block[x][y + 2][Znum].ID && block[x][y + 2][Znum].corner == 2)
@@ -1687,7 +1679,7 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 							continue;
 						}
 					}
-					//‚P~‚R‚ª‚˜•ûŒü‚Ìê‡
+					
 					if (x + 2 < m.num[0])
 					{
 						if (block[x + 2][y][Znum].flag == 13 && block[x][y][Znum].ID == block[x + 2][y][Znum].ID && block[x + 2][y][Znum].corner == 2)
@@ -1709,7 +1701,7 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 				}
 
 				//###################################
-				//‚P~‚S‚Ìê‡
+				//P~S
 				//###################################
 				//else if(block[x][y][Znum].flag == 14 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 14)
@@ -1734,7 +1726,7 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 							continue;
 						}
 					}
-					//‚P~‚S‚ª‚˜•ûŒü‚Ìê‡
+					
 					if (x + 3 < m.num[0])
 					{
 						if (block[x + 3][y][Znum].flag == 14 && block[x][y][Znum].ID == block[x + 3][y][Znum].ID && block[x + 3][y][Znum].corner == 2)
@@ -1755,7 +1747,7 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 					}
 				}
 				//###################################
-				//‚Q~‚Q‚Ìê‡
+				//Q~Q
 				//###################################
 				//else if(block[x][y][Znum].flag == 22 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 22)
@@ -1777,12 +1769,12 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 					}
 				}
 				//###################################
-				//‚Q~‚R‚Ìê‡
+				//Q~R
 				//###################################
 				//else if(block[x][y][Znum].flag == 23 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 23)
 				{
-					//‚Q~‚R‚ª‚™•ûŒü‚Ìê‡
+					
 					if (y + 2 < m.num[1])
 					{
 						if (block[x + 1][y + 2][Znum].flag == 23 && block[x][y][Znum].ID == block[x + 1][y + 2][Znum].ID && block[x + 1][y + 2][Znum].corner == 2)
@@ -1802,7 +1794,7 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 							continue;
 						}
 					}
-					//‚Q~‚R‚ª‚˜•ûŒü‚Ìê‡
+				
 					if (x + 2 < m.num[0])
 					{
 						if (block[x + 2][y + 1][Znum].flag == 23 && block[x][y][Znum].ID == block[x + 2][y + 1][Znum].ID && block[x + 2][y + 1][Znum].corner == 2)
@@ -1823,12 +1815,12 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 					}
 				}
 				//###################################
-				//‚Q~‚S‚Ìê‡
+				//Q~S
 				//###################################
 				//else if(block[x][y][Znum].flag == 24 && block[x][y][Znum].corner == 1)
 				else if (block[x][y][Znum].flag == 24)
 				{
-					//‚Q~‚S‚ª‚™•ûŒü‚Ìê‡
+					//
 					if (y + 3 < m.num[1])
 					{
 						if (block[x + 1][y + 3][Znum].flag == 24 && block[x][y][Znum].ID == block[x + 1][y + 3][Znum].ID && block[x + 1][y + 3][Znum].corner == 2)
@@ -1848,7 +1840,6 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 							continue;
 						}
 					}
-					//‚Q~‚S‚ª‚˜•ûŒü‚Ìê‡
 					if (x + 3 < m.num[0])
 					{
 						if (block[x + 3][y + 1][Znum].flag == 24 && block[x][y][Znum].ID == block[x + 3][y + 1][Znum].ID && block[x + 3][y + 1][Znum].corner == 2)
@@ -1878,39 +1869,39 @@ void DrawBlocks_3D(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•�
 //###########################################
 //                                                               
 //###########################################
-void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚¯•K—v‚É‚È‚é
+void DrawBlockModel(Model& m, Lego*** block)
 {
-	CVector3d scale_11(1.0, 1.0, 1.2);			//‚P~‚P‚ÌƒuƒƒbƒN‚Ìk¬Šg‘å”{—¦
+	CVector3d scale_11(1.0, 1.0, 1.2);			
 	CVector3d scale_12_y(1.0, 2.0, 1.2);		//
 	CVector3d scale_12_x(2.0, 1.0, 1.2);		//
 	CVector3d scale_13_y(1.0, 3.0, 1.2);		//
 	CVector3d scale_13_x(3.0, 1.0, 1.2);		//
 	CVector3d scale_14_y(1.0, 4.0, 1.2);		//
 	CVector3d scale_14_x(4.0, 1.0, 1.2);		//
-	CVector3d scale_22(2.0, 2.0, 1.2);			//
+	CVector3d scale_22(2.0, 2.0, 1.2);			
 	CVector3d scale_23_y(2.0, 3.0, 1.2);		//
 	CVector3d scale_23_x(3.0, 2.0, 1.2);		//
-	CVector3d scale_24_y(2.0, 4.0, 1.2);		//‚Q~‚Si‚™•ûŒü‚É’·‚¢j‚ÌƒuƒƒbƒN‚Ìk¬Šg‘å”{—¦
+	CVector3d scale_24_y(2.0, 4.0, 1.2);		//
 	CVector3d scale_24_x(4.0, 2.0, 1.2);		//
 
 	CVector3d center;
 	GLfloat color[4] = { 0.0, 0.0, 0.0, 1.0 };
 	GLfloat white[4] = { 1.0, 1.0, 1.0, 1.0 };
 	GLfloat black[4] = { 0.0, 0.0, 0.0, 1.0 };
-	GLfloat shininess = 30;		//Å‘å128iƒvƒ‰ƒXƒ`ƒbƒN‚Ìê‡‚Í‚P‚O`‚S‚Oj
-	GLfloat light0_position[4] = { (float)GLSettings4.m_Eye.x, (float)GLSettings4.m_Eye.y, (float)GLSettings4.m_Eye.z, 1.0f };//ŒõŒ¹‚ÌˆÊ’u  Ž‹“_‚ÌˆÊ’u
+	GLfloat shininess = 30;		
+	GLfloat light0_position[4] = { (float)GLSettings4.m_Eye.x, (float)GLSettings4.m_Eye.y, (float)GLSettings4.m_Eye.z, 1.0f };
 
 																															  //ŒõŒ¹‚ÌÝ’è--------------------------------------
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_NORMALIZE);
 	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);			//ŒõŒ¹0‚ð—˜—p
+	glEnable(GL_LIGHT0);			
 
-	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				//ƒ‰ƒCƒg0‚ÌˆÊ’u‚ðÝ’è‚·‚é
-	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
-	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
+	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				
+	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		
+	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								
 
-																			//‘SƒuƒƒbƒN‚É‹¤’Ê‚Ìƒ}ƒeƒŠƒAƒ‹‚ÌÝ’è
+																			
 	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
 	glMaterialf(GL_FRONT, GL_SHININESS, shininess);
 
@@ -1926,29 +1917,26 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 			for (int y(1); y<m.num[1] - 1; y++)
 			{
 				//###################################
-				//‚P~‚P‚Ìê‡
+				//
 				//###################################
 				if (block[x][y][z].flag == 1)
 				{
-					//”½ŽžŒv‰ñ‚è
-					//ƒuƒƒbƒN‚Ì’†S(x+0.5, y+0.5)
-					//‚˜A‚™A‚š•ûŒü‚ÌŠg‘å‚Í‰½”{‚©
 					center.x = x + 0.5;
 					center.y = y + 0.5;
 					center.z = z + 0.5;
-					//ƒJƒ‰[‚ÌƒuƒƒbƒN
+					
 					color[0] = (float)m.Voxel_colors[x][y][z].r;
 					color[1] = (float)m.Voxel_colors[x][y][z].g;
 					color[2] = (float)m.Voxel_colors[x][y][z].b;
 
-					//ŠO‚©‚çŒ©‚¦‚È‚¢ƒuƒƒbƒN‚ÌF‚Â‚«ƒuƒƒbƒN‚Í•`‰æ‚µ‚È‚¢
+					//
 					if (color[0] < 2)
 					{
 						glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
 						//glMaterialfv(GL_FRONT, GL_SPECULAR, white);
 						DrawSolidBlock(center, scale_11);
 					}
-					////•‚¢ƒƒCƒ„[
+					////
 					glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, black);
 					DrawWireBlock(center, scale_11);
 				}
@@ -1958,12 +1946,12 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 						continue;
 
 					//###################################
-					//‚P~‚Q‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 12 && block[x][y][z].corner == 1)
 					if (block[x][y][z].flag == 12)
 					{
-						//‚P~‚Q‚ª‚™•ûŒü‚Ìê‡
+						//
 						if (block[x][y + 1][z].flag == 12 && block[x][y][z].ID == block[x][y + 1][z].ID && block[x][y + 1][z].corner == 2)
 						{
 							center.x = x + 0.5;
@@ -1972,7 +1960,7 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 							color[0] = (float)m.Voxel_colors[x][y][z].r;
 							color[1] = (float)m.Voxel_colors[x][y][z].g;
 							color[2] = (float)m.Voxel_colors[x][y][z].b;
-							//ŠO‚©‚çŒ©‚¦‚È‚¢ƒuƒƒbƒN‚ÌF‚Â‚«ƒuƒƒbƒN‚Í•`‰æ‚µ‚È‚¢
+							//
 							if (color[0] < 2) {
 								glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
 								DrawSolidBlock(center, scale_12_y);
@@ -1981,7 +1969,7 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 							DrawWireBlock(center, scale_12_y);
 							continue;
 						}
-						//‚P~‚Q‚ª‚˜•ûŒü‚Ìê‡
+						//
 						if (block[x + 1][y][z].flag == 12 && block[x][y][z].ID == block[x + 1][y][z].ID && block[x + 1][y][z].corner == 2)
 						{
 							center.x = x + 1.0;
@@ -1999,12 +1987,12 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 						}
 					}
 					//###################################
-					//‚P~‚R‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 13 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 13)
 					{
-						//‚P~‚R‚ª‚™•ûŒü‚Ìê‡
+						//
 						if (y + 2 < m.num[1])
 						{
 							if (block[x][y + 2][z].flag == 13 && block[x][y][z].ID == block[x][y + 2][z].ID && block[x][y + 2][z].corner == 2)
@@ -2025,7 +2013,7 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 								continue;
 							}
 						}
-						//‚P~‚R‚ª‚˜•ûŒü‚Ìê‡
+						//
 						if (x + 2 < m.num[0])
 						{
 							if (block[x + 2][y][z].flag == 13 && block[x][y][z].ID == block[x + 2][y][z].ID && block[x + 2][y][z].corner == 2)
@@ -2049,7 +2037,7 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 					}
 
 					//###################################
-					//‚P~‚S‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 14 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 14)
@@ -2074,7 +2062,7 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 								continue;
 							}
 						}
-						//‚P~‚S‚ª‚˜•ûŒü‚Ìê‡
+						//
 						if (x + 3 < m.num[0])
 						{
 							if (block[x + 3][y][z].flag == 14 && block[x][y][z].ID == block[x + 3][y][z].ID && block[x + 3][y][z].corner == 2)
@@ -2096,7 +2084,7 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 						}
 					}
 					//###################################
-					//‚Q~‚Q‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 22 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 22)
@@ -2118,12 +2106,12 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 						}
 					}
 					//###################################
-					//‚Q~‚R‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 23 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 23)
 					{
-						//‚Q~‚R‚ª‚™•ûŒü‚Ìê‡
+						//
 						if (y + 2 < m.num[1])
 						{
 							if (block[x + 1][y + 2][z].flag == 23 && block[x][y][z].ID == block[x + 1][y + 2][z].ID && block[x + 1][y + 2][z].corner == 2)
@@ -2143,7 +2131,7 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 								continue;
 							}
 						}
-						//‚Q~‚R‚ª‚˜•ûŒü‚Ìê‡
+						//
 						if (x + 2 < m.num[0])
 						{
 							if (block[x + 2][y + 1][z].flag == 23 && block[x][y][z].ID == block[x + 2][y + 1][z].ID && block[x + 2][y + 1][z].corner == 2)
@@ -2164,12 +2152,12 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 						}
 					}
 					//###################################
-					//‚Q~‚S‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 24 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 24)
 					{
-						//‚Q~‚S‚ª‚™•ûŒü‚Ìê‡
+						//
 						if (y + 3 < m.num[1])
 						{
 							if (block[x + 1][y + 3][z].flag == 24 && block[x][y][z].ID == block[x + 1][y + 3][z].ID && block[x + 1][y + 3][z].corner == 2)
@@ -2189,7 +2177,7 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 								continue;
 							}
 						}
-						//‚Q~‚S‚ª‚˜•ûŒü‚Ìê‡
+						//
 						if (x + 3 < m.num[0])
 						{
 							if (block[x + 3][y + 1][z].flag == 24 && block[x][y][z].ID == block[x + 3][y + 1][z].ID && block[x + 3][y + 1][z].corner == 2)
@@ -2214,7 +2202,7 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 		}
 	}
 
-	//ˆêŽü‰ñ‚Á‚½‚ç‰ñ“]Šp‚ð 0 ‚É–ß‚· 
+	//
 	if (++r >= 360) r = 0;
 	glDisable(GL_LIGHTING);
 }
@@ -2222,39 +2210,39 @@ void DrawBlockModel(Model& m, Lego*** block)//’f–Ê}‚Ì‘w•ª‚¾‚
 //##########################################
 //                                                     
 //##########################################
-void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì‘w•ª‚¾‚¯•K—v‚É‚È‚é
+void DrawBlockModel_half(Model& m, Lego*** block, int Znum)
 {
-	CVector3d scale_11(1.0f, 1.0f, 1.2);			//‚P~‚P‚ÌƒuƒƒbƒN‚Ìk¬Šg‘å”{—¦
+	CVector3d scale_11(1.0f, 1.0f, 1.2);			
 	CVector3d scale_12_y(1.0, 2.0, 1.2);		//
 	CVector3d scale_12_x(2.0, 1.0, 1.2);		//
 	CVector3d scale_13_y(1.0, 3.0, 1.2);		//
 	CVector3d scale_13_x(3.0, 1.0, 1.2);		//
 	CVector3d scale_14_y(1.0, 4.0, 1.2);		//
 	CVector3d scale_14_x(4.0, 1.0, 1.2);		//
-	CVector3d scale_22(2.0, 2.0, 1.2);			//
+	CVector3d scale_22(2.0, 2.0, 1.2);		//
 	CVector3d scale_23_y(2.0, 3.0, 1.2);		//
 	CVector3d scale_23_x(3.0, 2.0, 1.2);		//
-	CVector3d scale_24_y(2.0, 4.0, 1.2);		//‚Q~‚Si‚™•ûŒü‚É’·‚¢j‚ÌƒuƒƒbƒN‚Ìk¬Šg‘å”{—¦
+	CVector3d scale_24_y(2.0, 4.0, 1.2);		//
 	CVector3d scale_24_x(4.0, 2.0, 1.2);		//
 
 	CVector3d center;
 	GLfloat color[4] = { 0.0f, 0.0f, 0.0f, 0.7f };
 	GLfloat white[4] = { 1.0f, 1.0f, 1.0f, 0.7f };
 	GLfloat black[4] = { 0.0f, 0.0f, 0.0f, 0.7f };
-	GLfloat shininess = 30;		//Å‘å128iƒvƒ‰ƒXƒ`ƒbƒN‚Ìê‡‚Í‚P‚O`‚S‚Oj
-	GLfloat light0_position[4] = { (float)GLSettings4.m_Eye.x, (float)GLSettings4.m_Eye.y, (float)GLSettings4.m_Eye.z, 1.0f };//ŒõŒ¹‚ÌˆÊ’u  Ž‹“_‚ÌˆÊ’u
+	GLfloat shininess = 30;		
+	GLfloat light0_position[4] = { (float)GLSettings4.m_Eye.x, (float)GLSettings4.m_Eye.y, (float)GLSettings4.m_Eye.z, 1.0f };
 
-																															  //ŒõŒ¹‚ÌÝ’è--------------------------------------
+																															 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_NORMALIZE);
 	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);			//ŒõŒ¹0‚ð—˜—p
+	glEnable(GL_LIGHT0);			
 
-	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				//ƒ‰ƒCƒg0‚ÌˆÊ’u‚ðÝ’è‚·‚é
-	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
-	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
+	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				
+	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		
+	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								
 
-																			//‘SƒuƒƒbƒN‚É‹¤’Ê‚Ìƒ}ƒeƒŠƒAƒ‹‚ÌÝ’è
+																			
 	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
 	glMaterialf(GL_FRONT, GL_SHININESS, shininess);
 
@@ -2266,13 +2254,10 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 			for (int y(1); y<m.num[1] - 1; y++)
 			{
 				//###################################
-				//‚P~‚P‚Ìê‡
+				//
 				//###################################
 				if (block[x][y][z].flag == 1)
 				{
-					//”½ŽžŒv‰ñ‚è
-					//ƒuƒƒbƒN‚Ì’†S(x+0.5, y+0.5)
-					//‚˜A‚™A‚š•ûŒü‚ÌŠg‘å‚Í‰½”{‚©
 					center.x = x + 0.5;
 					center.y = y + 0.5;
 					center.z = z + 0.5;
@@ -2281,14 +2266,14 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 					color[1] = (float)m.Voxel_colors[x][y][z].g;
 					color[2] = (float)m.Voxel_colors[x][y][z].b;
 
-					//ŠO‚©‚çŒ©‚¦‚È‚¢ƒuƒƒbƒN‚ÌF‚Â‚«ƒuƒƒbƒN‚Í•`‰æ‚µ‚È‚¢
+					
 					if (color[0] < 2)
 					{
 						glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
 						//glMaterialfv(GL_FRONT, GL_SPECULAR, white);
 						DrawSolidBlock(center, scale_11);
 					}
-					////•‚¢ƒƒCƒ„[
+					
 					glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, black);
 					DrawWireBlock(center, scale_11);
 				}
@@ -2298,12 +2283,12 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 						continue;
 
 					//###################################
-					//‚P~‚Q‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 12 && block[x][y][z].corner == 1)
 					if (block[x][y][z].flag == 12)
 					{
-						//‚P~‚Q‚ª‚™•ûŒü‚Ìê‡
+						
 						if (block[x][y + 1][z].flag == 12 && block[x][y][z].ID == block[x][y + 1][z].ID && block[x][y + 1][z].corner == 2)
 						{
 							center.x = x + 0.5;
@@ -2312,7 +2297,7 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 							color[0] = (float)m.Voxel_colors[x][y][z].r;
 							color[1] = (float)m.Voxel_colors[x][y][z].g;
 							color[2] = (float)m.Voxel_colors[x][y][z].b;
-							//ŠO‚©‚çŒ©‚¦‚È‚¢ƒuƒƒbƒN‚ÌF‚Â‚«ƒuƒƒbƒN‚Í•`‰æ‚µ‚È‚¢
+						
 							if (color[0] < 2) {
 								glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
 								DrawSolidBlock(center, scale_12_y);
@@ -2321,7 +2306,7 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 							DrawWireBlock(center, scale_12_y);
 							continue;
 						}
-						//‚P~‚Q‚ª‚˜•ûŒü‚Ìê‡
+						//
 						if (block[x + 1][y][z].flag == 12 && block[x][y][z].ID == block[x + 1][y][z].ID && block[x + 1][y][z].corner == 2)
 						{
 							center.x = x + 1.0;
@@ -2339,12 +2324,12 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 						}
 					}
 					//###################################
-					//‚P~‚R‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 13 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 13)
 					{
-						//‚P~‚R‚ª‚™•ûŒü‚Ìê‡
+						
 						if (y + 2 < m.num[1])
 						{
 							if (block[x][y + 2][z].flag == 13 && block[x][y][z].ID == block[x][y + 2][z].ID && block[x][y + 2][z].corner == 2)
@@ -2365,7 +2350,7 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 								continue;
 							}
 						}
-						//‚P~‚R‚ª‚˜•ûŒü‚Ìê‡
+						
 						if (x + 2 < m.num[0])
 						{
 							if (block[x + 2][y][z].flag == 13 && block[x][y][z].ID == block[x + 2][y][z].ID && block[x + 2][y][z].corner == 2)
@@ -2389,12 +2374,12 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 					}
 
 					//###################################
-					//‚P~‚S‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 14 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 14)
 					{
-						//‚P~‚S‚ª‚™•ûŒü‚Ìê‡
+						
 						if (y + 3 < m.num[1])
 						{
 							if (block[x][y + 3][z].flag == 14 && block[x][y][z].ID == block[x][y + 3][z].ID && block[x][y + 3][z].corner == 2)
@@ -2414,7 +2399,7 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 								continue;
 							}
 						}
-						//‚P~‚S‚ª‚˜•ûŒü‚Ìê‡
+						
 						if (x + 3 < m.num[0])
 						{
 							if (block[x + 3][y][z].flag == 14 && block[x][y][z].ID == block[x + 3][y][z].ID && block[x + 3][y][z].corner == 2)
@@ -2436,7 +2421,7 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 						}
 					}
 					//###################################
-					//‚Q~‚Q‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 22 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 22)
@@ -2458,12 +2443,12 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 						}
 					}
 					//###################################
-					//‚Q~‚R‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 23 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 23)
 					{
-						//‚Q~‚R‚ª‚™•ûŒü‚Ìê‡
+					
 						if (y + 2 < m.num[1])
 						{
 							if (block[x + 1][y + 2][z].flag == 23 && block[x][y][z].ID == block[x + 1][y + 2][z].ID && block[x + 1][y + 2][z].corner == 2)
@@ -2483,7 +2468,7 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 								continue;
 							}
 						}
-						//‚Q~‚R‚ª‚˜•ûŒü‚Ìê‡
+					
 						if (x + 2 < m.num[0])
 						{
 							if (block[x + 2][y + 1][z].flag == 23 && block[x][y][z].ID == block[x + 2][y + 1][z].ID && block[x + 2][y + 1][z].corner == 2)
@@ -2504,12 +2489,12 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 						}
 					}
 					//###################################
-					//‚Q~‚S‚Ìê‡
+					//
 					//###################################
 					//else if(block[x][y][z].flag == 24 && block[x][y][z].corner == 1)
 					else if (block[x][y][z].flag == 24)
 					{
-						//‚Q~‚S‚ª‚™•ûŒü‚Ìê‡
+					
 						if (y + 3 < m.num[1])
 						{
 							if (block[x + 1][y + 3][z].flag == 24 && block[x][y][z].ID == block[x + 1][y + 3][z].ID && block[x + 1][y + 3][z].corner == 2)
@@ -2529,7 +2514,7 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 								continue;
 							}
 						}
-						//‚Q~‚S‚ª‚˜•ûŒü‚Ìê‡
+					
 						if (x + 3 < m.num[0])
 						{
 							if (block[x + 3][y + 1][z].flag == 24 && block[x][y][z].ID == block[x + 3][y + 1][z].ID && block[x + 3][y + 1][z].corner == 2)
@@ -2558,9 +2543,9 @@ void DrawBlockModel_half(Model& m, Lego*** block, int Znum)//’f–Ê}‚Ì�
 
 
 //################################
-//                         GCAD—p}‚Ì•`‰æ                              
+//           GCAD                         
 //################################
-void DrawGrid_GCAD(Model& m, int Znum)//’f–Ê}‚Ì‘w•ª‚¾‚¯•K—v‚É‚È‚é
+void DrawGrid_GCAD(Model& m, int Znum)
 {
 	glColor3d(0.0, 0.0, 0.0);
 	//×‚¢ü‚ð‘‚­
@@ -2587,13 +2572,13 @@ void DrawGrid_GCAD(Model& m, int Znum)//’f–Ê}‚Ì‘w•ª‚¾‚¯•K
 
 	CColor surf(0.0, 0.0, 0.0);
 	CColor inner(1.0, 0.0, 0.0);
-	//ƒ}ƒX‚ð•`‰æ‚µ‚Ä‚¢‚­(ˆêF‚Å‚·‚ªA–¾‚é‚³‚ð•Ï‚¦‚Ä‚¢‚­)
+	//
 	glBegin(GL_QUADS);
 	for (int x(0); x<m.num[0]; x++) {
 		for (int y(0); y<m.num[1]; y++) {
-			//“à•”ƒ{ƒNƒZƒ‹‚¾‚Á‚½‚ç
+			
 			if (m.Voxels[x][y][Znum].fill) {
-				//•\–Êƒ{ƒNƒZƒ‹‚¾‚Á‚½‚ç
+				
 				if (m.Voxels[x][y][Znum].surf) {
 					glColor4d(surf.r, surf.g, surf.b, 0.9);
 					glVertex3d(x, y, 1.2*Znum);
@@ -2621,7 +2606,7 @@ void DrawGrid_GCAD(Model& m, int Znum)//’f–Ê}‚Ì‘w•ª‚¾‚¯•K
 //################################
 //                         GCAD            
 //################################
-void DrawWireVoxel_GCAD(Model& m)//’f–Ê}‚Ì‘w•ª‚¾‚¯•K—v‚É‚È‚é
+void DrawWireVoxel_GCAD(Model& m)
 {
 
 	glColor4d(0.2, 0.2, 0.2, 0.2);
@@ -2655,7 +2640,7 @@ void DrawVoxel_GCAD(Model& m, int xx, int yy, int zz)
 			}
 		}
 	}
-	//‚w‚Ì‚ ‚é‘w‚ð•`‰æ
+	//w
 	for (int y(1); y<m.num[1] - 1; y++) {
 		for (int z(1); z<m.num[2] - 1; z++) {
 			if (m.Voxels[xx][y][z].fill) {
@@ -2669,7 +2654,7 @@ void DrawVoxel_GCAD(Model& m, int xx, int yy, int zz)
 			}
 		}
 	}
-	//‚x‚Ì‚ ‚é‘w‚ð•`‰æ
+	//x
 	for (int x(1); x<m.num[0] - 1; x++) {
 		for (int z(1); z<m.num[2] - 1; z++) {
 			if (m.Voxels[x][yy][z].fill) {
@@ -2683,7 +2668,7 @@ void DrawVoxel_GCAD(Model& m, int xx, int yy, int zz)
 			}
 		}
 	}
-	//‚y‚Ì‚ ‚é‘w‚ð•`‰æ
+	//y
 	for (int x(1); x<m.num[0] - 1; x++) {
 		for (int y(1); y<m.num[1] - 1; y++) {
 			if (m.Voxels[x][y][zz].fill) {
@@ -2716,17 +2701,17 @@ void DrawSolid_GACD(Model& integ, int Znum)
 	CColor Dblack(0.2, 0.2, 0.2);
 	CColor inner(1.0, 0.0, 0.0);
 
-	//ŒõŒ¹‚ÌÝ’è--------------------------------------
+	//-------------------------------------
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_NORMALIZE);
 	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);			//ŒõŒ¹0‚ð—˜—p
+	glEnable(GL_LIGHT0);			
 
-	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				//ƒ‰ƒCƒg0‚ÌˆÊ’u‚ðÝ’è‚·‚é
-	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
-	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
+	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				
+	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		
+	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								
 
-																			//‘SƒuƒƒbƒN‚É‹¤’Ê‚Ìƒ}ƒeƒŠƒAƒ‹‚ÌÝ’è
+																			
 	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
 	glMaterialf(GL_FRONT, GL_SHININESS, shininess);
 
@@ -2753,122 +2738,3 @@ void DrawSolid_GACD(Model& integ, int Znum)
 }
 
 
-//--------------------- Integration---------------
-//
-//----------------------------           
-//
-////                   Draw Color Solid Model                           
-//void DrawColorSolidModel(Model& integ)
-//{
-//	GLfloat color[4] = { 0.0, 0.0, 0.0, 1.0 };
-//	GLfloat white[4] = { 1.0, 1.0, 1.0, 1.0 };
-//	GLfloat black[4] = { 0.0, 0.0, 0.0, 1.0 };
-//	GLfloat shininess = 10;		
-//	GLfloat light0_position[4] = { (float)GLSettings3.m_Eye.x, (float)GLSettings3.m_Eye.y, (float)GLSettings3.m_Eye.z, 1.0f };
-//
-//	CColor Cblack(0.0, 0.0, 0.0);
-//	CColor Cblue(0.0, 0.0, 1.0);
-//
-//	//--------------------------------------
-//	glEnable(GL_DEPTH_TEST);
-//	glEnable(GL_NORMALIZE);
-//	glEnable(GL_LIGHTING);
-//	glEnable(GL_LIGHT0);			
-//
-//	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				
-//	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		
-//	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								
-//
-//	//
-//	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
-//	glMaterialf(GL_FRONT, GL_SHININESS, shininess);
-//
-//	vector<CColor>::iterator itC = integ.SurfColors.begin();
-//	vector<Voxel>::iterator itV = integ.SurfVoxels.begin();
-//	while (itV != integ.SurfVoxels.end())
-//	{
-//		DrawSolidCuboid(itV->center, itV->length, (*itC));
-//		//glColor3d(0,0,0);
-//		//for (int i = 0; i < itV->line.size(); i++)
-//		//	DrawAllow(itV->center,itV->line[i],itV->line[i].Norm(),1.5);
-//		//DrawSolidCuboid(itV->center, itV->length, Cblue);
-//		DrawWireCuboid(itV->center, itV->length, Cblack);
-//		++itV;
-//		++itC;
-//	}
-//}
-//
-////                                                                                   
-////                   Draw Isolation voxel                           
-//void DrawIsoVoxels(Model& integ)
-//{
-//	GLfloat color[4] = { 0.0, 0.0, 0.0, 1.0 };
-//	GLfloat white[4] = { 1.0, 1.0, 1.0, 1.0 };
-//	GLfloat black[4] = { 0.0, 0.0, 0.0, 1.0 };
-//	GLfloat shininess = 10;		//Å‘å128iƒvƒ‰ƒXƒ`ƒbƒN‚Ìê‡‚Í‚P‚O`‚S‚Oj
-//	GLfloat light0_position[4] = { (float)GLSettings3.m_Eye.x, (float)GLSettings3.m_Eye.y, (float)GLSettings3.m_Eye.z, 1.0f };//ŒõŒ¹‚ÌˆÊ’u  Ž‹“_‚ÌˆÊ’u
-//
-//	CColor Cblack(0.0, 0.0, 0.0);
-//	CColor Cred(1.0, 0.0, 0.0);
-//
-//	//ŒõŒ¹‚ÌÝ’è--------------------------------------
-//	glEnable(GL_DEPTH_TEST);
-//	glEnable(GL_NORMALIZE);
-//	glEnable(GL_LIGHTING);
-//	glEnable(GL_LIGHT0);			//ŒõŒ¹0‚ð—˜—p
-//
-//	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				//ƒ‰ƒCƒg0‚ÌˆÊ’u‚ðÝ’è‚·‚é
-//	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
-//	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
-//
-//	//‘SƒuƒƒbƒN‚É‹¤’Ê‚Ìƒ}ƒeƒŠƒAƒ‹‚ÌÝ’è
-//	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
-//	glMaterialf(GL_FRONT, GL_SHININESS, shininess);
-//
-//	vector<Voxel>::iterator itV = integ.IsoVoxels.begin();
-//	while (itV != integ.IsoVoxels.end())
-//	{
-//		//DrawSolidCuboid(itV->center, itV->length, Cred);
-//		//DrawWireCuboid(itV->center, itV->length, Cblack);
-//		DrawWireCuboid(itV->center, itV->length, Cred);
-//		DrawSphere(itV->center, itV->length / 3);
-//
-//		++itV;
-//	}
-//}
-////
-////
-//void Drawline(Model& integ, int num){
-//	GLfloat color[4] = { 0.0, 0.0, 0.0, 1.0 };
-//	GLfloat white[4] = { 1.0, 1.0, 1.0, 1.0 };
-//	GLfloat black[4] = { 0.0, 0.0, 0.0, 1.0 };
-//	GLfloat shininess = 10;		//Å‘å128iƒvƒ‰ƒXƒ`ƒbƒN‚Ìê‡‚Í‚P‚O`‚S‚Oj
-//	GLfloat light0_position[4] = { (float)GLSettings3.m_Eye.x, (float)GLSettings3.m_Eye.y, (float)GLSettings3.m_Eye.z, 1.0f };//ŒõŒ¹‚ÌˆÊ’u  Ž‹“_‚ÌˆÊ’u
-//
-//	CColor Cblack(0.0, 0.0, 0.0);
-//	CColor Cblue(0.0, 0.0, 1.0);
-//
-//	//ŒõŒ¹‚ÌÝ’è--------------------------------------
-//	glEnable(GL_DEPTH_TEST);
-//	glEnable(GL_NORMALIZE);
-//	glEnable(GL_LIGHTING);
-//	glEnable(GL_LIGHT0);			//ŒõŒ¹0‚ð—˜—p
-//
-//	glLightfv(GL_LIGHT0, GL_POSITION, light0_position);				//ƒ‰ƒCƒg0‚ÌˆÊ’u‚ðÝ’è‚·‚é
-//	glLightfv(GL_LIGHT0, GL_AMBIENT_AND_DIFFUSE, white);		//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
-//	glLightfv(GL_LIGHT0, GL_SPECULAR, white);								//ƒ‰ƒCƒg0‚Ì‚ðÝ’è‚·‚é
-//
-//	//‘SƒuƒƒbƒN‚É‹¤’Ê‚Ìƒ}ƒeƒŠƒAƒ‹‚ÌÝ’è
-//	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
-//	glMaterialf(GL_FRONT, GL_SHININESS, shininess);
-//
-//	//vector<CColor>::iterator itC = integ.SurfColors.begin();
-//	//vector<Voxel>::iterator itV = integ.SurfVoxels.begin();
-//	//while(itV != integ.SurfVoxels.end())
-//	//{
-//	for (int i = 0; i < integ.SurfVoxels[num].line.size(); i++)
-//		DrawAllow(integ.SurfVoxels[num].center, integ.SurfVoxels[num].line[i], integ.SurfVoxels[num].line[i].Norm(), 0.5);
-//	//++itV;
-//	//++itC;
-//	//}
-//}
