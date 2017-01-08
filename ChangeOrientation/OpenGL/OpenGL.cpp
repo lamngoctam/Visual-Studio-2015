@@ -1,5 +1,5 @@
 //############################################################################
-
+// 2015/08
 //############################################################################
 #include "../stdafx.h"
 #include "OpenGL.h"
@@ -53,8 +53,8 @@ void OpenGL::MovingMouse( int x, int y ){
 	
 
 	if( m_State == GLUT_DOWN && m_Button == GLUT_RIGHT_BUTTON ){
-		double dt = -(x - m_mouseLastX)*0.01;	//â°âÒì]ÇÃäpìx
-		double dp = -(m_mouseLastY - y)*0.01;	//ècâÒì]ÇÃäpìx
+		double dt = -(x - m_mouseLastX)*0.01;	
+		double dp = -(m_mouseLastY - y)*0.01;
 		m_Right = (cos(dt) * m_Right) + (sin(dt) * m_Front);
 		m_Upper = (cos(dp) * m_Upper) + (sin(dp) * m_Front);
 		m_Front = m_Upper.Cross(m_Right);
