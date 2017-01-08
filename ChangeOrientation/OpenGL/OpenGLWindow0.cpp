@@ -91,7 +91,7 @@ void OpenGLDisplay0(void) {
 	}
 
 	/********************************/
-	DisplayPostprocessor();	//Œãˆ—
+	DisplayPostprocessor();	
 }
 
 
@@ -100,9 +100,9 @@ void OpenGLDisplay0(void) {
 /*			OpenGL */
 /***************************************************/
 //http://e-words.jp/p/r-ascii.html
-//BackSpace‚
-//	16'\x08'	C++ 16i”
-//	 8'\010'	C++ 8i”
+//BackSpaceâ€š
+//	16Â'\x08'	C++ 16ÂiÂâ€
+//	 8Â'\010'	C++ 8ÂiÂâ€
 void OpenGLKeyboard0(unsigned char Key, int x, int y) {
 
 	switch (Key) {
@@ -160,14 +160,14 @@ void OpenGLKeyboard0(unsigned char Key, int x, int y) {
 			cout << UP.Pick[i] << endl;
 		break;
 
-	case '1':	//‹“_Ø‘Ö
+	case '1':	//
 		GLSettings0.m_EyeDis = 400;
 		GLSettings0.m_Center.Clear();
 		GLSettings0.m_Front.Set(2.0, 2.0, -0.1);
 		GLSettings0.m_Upper.Set(0.2, 0.2, 2.0);
 		break;
 
-	case '@':	//•`‰æo—Í
+	case '@':	//
 		writefile(GL2PS_EPS, GL2PS_SMPLE_SORT, GL2PS_DRAW_BACKGROUND, 0, "Window0", "eps", WinID[0], GLSettings0);
 		writefile(GL2PS_SVG, GL2PS_SMPLE_SORT, GL2PS_DRAW_BACKGROUND, 0, "Window0", "svg", WinID[0], GLSettings0);
 		writebmpfile("Window0", "bmp", WinID[0]);
@@ -209,23 +209,22 @@ int PickUp0(int x, int y, int hit_name[2], int Button) {
 	GLuint selectBuf[BUFSIZE];
 	glSelectBuffer(BUFSIZE, selectBuf);
 
-	PickUpInit(x, y);				//
-	GLSettings0.SetEyePosition();	//
+	PickUpInit(x, y);				
+	GLSettings0.SetEyePosition();	
 
-	PickUpPostprocessor();		//ƒsƒbƒNƒAƒbƒvŒãˆ—
+	PickUpPostprocessor();		
 
-	hits = glRenderMode(GL_RENDER);		//ƒqƒbƒg‚µ‚½•¨‘Ì‚ÌŒÂ”
+	hits = glRenderMode(GL_RENDER);		
 
-	//İ’u•¨‘Ì‚Ì’†‚©‚çA[‚³‚ªó‚¢‚à‚Ìiè‘O‚Éİ’u‚³‚ê‚Ä‚¢‚é‚à‚Ìj‚Ìid‚ğæ“¾
 	return SelectHits(hits, selectBuf, hit_name);
 }
 
 
 void PickObject0(int x, int y, int Button) {
-	int hit_name[2];	//
+	int hit_name[2];	
 	if (PickUp0(x, y, hit_name, Button) == -1) {
-		//
-		GLSettings0.ObjectPosition = &GLSettings0.ObjectTemp;	//ƒSƒ~‚ğŠi”[
+		
+		GLSettings0.ObjectPosition = &GLSettings0.ObjectTemp;	
 		return;
 	}
 
@@ -238,11 +237,13 @@ void PickObject0(int x, int y, int Button) {
 	{
 		if (cnt == hit_name[1])
 		{
-			cout << picknum + 1 << "ŒÂ–ÚF" << (*it).coord << endl;
+			cout << picknum + 1 << "  " << (*it).coord << endl;
 			UP.CorresVoxel3[picknum] = (*it);
 			UP.Pick[picknum] = (*it).coord;
-			if ((*it).pic == false)				(*it).pic = true;
-			else										(*it).pic = false;
+			if ((*it).pic == false)				
+				(*it).pic = true;
+			else										
+				(*it).pic = false;
 			picknum++;
 			picknum = picknum % 3;
 			break;
