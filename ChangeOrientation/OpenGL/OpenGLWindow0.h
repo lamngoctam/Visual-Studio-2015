@@ -7,7 +7,7 @@
 #include "OpenGLprimitive.h"
 
 
-//関数のプロトタイプ宣言
+//Function prototype declaration
 void DisplayInit();
 void DisplayPostprocessor();
 void writefile(int format, int sort, int options, int nbcol,char *filename, char *extension, int winid, OpenGL GLSettings);
@@ -22,7 +22,7 @@ int SelectHits( GLuint hits, GLuint* buf, int hit_name[2] );
 double ReturnDepth( int x, int y );
 
 
-//描画関数
+//Drawing function
 void DrawBoundingbox(CVector3d MaxPt,CVector3d MinPt);
 void ConclusiveAxis(void);
 //void DrawInitalPosition(Solid &M);
@@ -48,11 +48,11 @@ void Draw_Boundary_Octree(Model& m);
 
 //Object
 //extern Solid InitM;
-extern Model UP;		//UPのモデル
-extern Model DOWN;		//DOWNのモデル
+extern Model UP;		
+extern Model DOWN;		
 
-extern OctVoxel UpBoundingBox;			//UP bb
-extern OctVoxel DownBoundingBox;		//UPモデルのバウンディングボックス
+extern OctVoxel UpBoundingBox;			//UP model bounding box
+extern OctVoxel DownBoundingBox;		//DOWN model bounding box
 
 extern vector<cv::Point3f> vertex;
 
