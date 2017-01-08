@@ -15,9 +15,9 @@ inline void SetLight(){
 	CVector3d EyePos0(-35.0, -35.0, -50.0);
 
 	/****************************************************/
-	/*	ŒõŒ¹‚ğ©•ª‚ÅŒˆ’è‚·‚é‚±‚Æ‚ª‚Å‚«‚éB				*/
+	/*	You can determine the light source yourself.				*/
 	/****************************************************/
-	//F‚ğ8FŒˆ’è‚·‚éB
+	//Decide eight colors.
 	double ColID[8];
 	ColID[0] = CColor::white;
 	ColID[1] = CColor::lime;
@@ -31,7 +31,7 @@ inline void SetLight(){
 	GLfloat global_ambient[] = { 0.5f, 0.5f, 0.5f, 1.0f };
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, global_ambient);
 
-	//GLfloat light0_ambient[4] = { (float)GetColor((int)ColID[0]).r, (float)GetColor((int)ColID[0]).g, (float)GetColor((int)ColID[0]).b, 1.0f };  //ŠÂ‹«ŒõF‘S•ûŒü‚©‚ç‚­‚éŒõA•µˆÍ‹CŒõ
+	//GLfloat light0_ambient[4] = { (float)GetColor((int)ColID[0]).r, (float)GetColor((int)ColID[0]).g, (float)GetColor((int)ColID[0]).b, 1.0f };  
 	GLfloat light0_ambient[4] = { 1.0f, 1.0f, 1.0f, .5f };			
 	GLfloat light0_diffuse[4] = { 1.0f, 1.0f, 1.0f, .5f };			
 	GLfloat light0_specular[4] = { 1.0f, 1.0f, 1.0f, .5f };			
@@ -125,7 +125,7 @@ inline void SetLight(){
 
 
 inline void EnableLight(int value){
-	//ŒõŒ¹‚ğƒIƒ“
+	//Turn on the light source
 	glEnable( GL_LIGHTING );
 	glEnable( GL_NORMALIZE );
 
@@ -159,12 +159,12 @@ inline void EnableLight(int value){
 
 
 inline void DisableLight(void){
-	//ŒõŒ¹‚ª¬‚´‚ç‚È‚¢‚æ‚¤‚É‘S•”A‰ğœ
+	
 	glDisable( GL_LIGHT0);	glDisable( GL_LIGHT1);	glDisable( GL_LIGHT2);
 	glDisable( GL_LIGHT3);	glDisable( GL_LIGHT4);	glDisable( GL_LIGHT5);
 	glDisable( GL_LIGHT6);	glDisable( GL_LIGHT7);
 
-	//ŒõŒ¹‚ğƒIƒt
+	// turn off the light source
 	glDisable( GL_LIGHTING );
 	glDisable( GL_NORMALIZE );
 }
@@ -172,12 +172,12 @@ inline void DisableLight(void){
 //inline void LEGOlight(CColor& C){
 //	//CVector3d EyePos0(-35.0, 35.0, 50.0);
 //
-//	GLfloat materialCol[4] = { (GLfloat)C.r, (GLfloat)C.g, (GLfloat)C.b, 1};		//Ş¿iFj
+//	GLfloat materialCol[4] = { (GLfloat)C.r, (GLfloat)C.g, (GLfloat)C.b, 1};		
 //
-//	GLfloat light0_position[4] = { (GLfloat)GLSettings0.m_EyePos[0], (GLfloat)GLSettings0.m_EyePos[1], (GLfloat)GLSettings0.m_EyePos[2], 0.0f };//ŒõŒ¹‚ÌˆÊ’u ‚S‚Â–Ú‚Í–³ŒÀ‰“i•½sŒõŒ¹j‚ğw’è
-//	GLfloat light0_ambient[4] = {1.0f,1.0f,1.0f, 1.0f };  //ŠÂ‹«ŒõF‘S•ûŒü‚©‚ç‚­‚éŒõA•µˆÍ‹CŒõ
-//	GLfloat light0_diffuse[4] = { 1.0f, 1.0f, 1.0f, .5f };  //ŠgUŒõFˆê•ûŒü‚©‚ç‚«‚Ä‘S•ûŒü‚É”½Ë‚·‚éŒõ
-//	GLfloat light0_specular[4] = { 1.0f, 1.0f, 1.0f, .5f };  //‹¾–ÊŒõFˆê•ûŒü‚©‚ç‚«‚Äˆê•ûŒü‚É”½Ë‚·‚éŒõ
+//	GLfloat light0_position[4] = { (GLfloat)GLSettings0.m_EyePos[0], (GLfloat)GLSettings0.m_EyePos[1], (GLfloat)GLSettings0.m_EyePos[2], 0.0f };
+//	GLfloat light0_ambient[4] = {1.0f,1.0f,1.0f, 1.0f };  //Ambient light
+//	GLfloat light0_diffuse[4] = { 1.0f, 1.0f, 1.0f, .5f };  //
+//	GLfloat light0_specular[4] = { 1.0f, 1.0f, 1.0f, .5f };  //
 //
 //	glLightfv( GL_LIGHT0, GL_POSITION, light0_position );
 //	glLightfv( GL_LIGHT0, GL_AMBIENT,  light0_ambient );
@@ -188,13 +188,6 @@ inline void DisableLight(void){
 //	
 //	glEnable(GL_LIGHTING);
 //	glEnable(GL_LIGHT0);
-////	GL_AMBIENT		ŠÂ‹«Œõ‚ğ4‚Â‚Ì®”’lA‚Ü‚½‚Í•‚“®¬”“_’l‚Åw’è‚µ‚Ü‚·
-////GL_DIFFUSE		ŠgUŒõ‚ğ4‚Â‚Ì®”’lA‚Ü‚½‚Í•‚“®¬”“_’l‚Åw’è‚µ‚Ü‚·
-////GL_SPECULAR		‹¾–ÊŒõ‚ğ4‚Â‚Ì®”’lA‚Ü‚½‚Í•‚“®¬”“_’l‚Åw’è‚µ‚Ü‚·
-////GL_EMISSION		•úË‹P“x‚ğ4‚Â‚Ì®”’lA‚Ü‚½‚Í•‚“®¬”“_’l‚Åw’è‚µ‚Ü‚·
-////GL_SHININESS		‹¾–ÊŒõ‚Ìw”‚ğ’Pˆê‚Ì®”’lA‚Ü‚½‚Í•‚“®¬”“_’l‚Åw’è‚µ‚Ü‚·
-////GL_AMBIENT_AND_DIFFUSE		ŠÂ‹«Œõ‚ÆŠgUŒõ‚ğ“¯‚Éw’è‚µ‚Ü‚·
-////GL_COLOR_INDEXES		ŠÂ‹«ŒõAŠgUŒõA‹¾–ÊŒõ‚ÌƒJƒ‰[w•W‚ğ3‚Â‚Ì®”’lA‚Ü‚½‚Í•‚“®¬”“_’l‚Åw’è‚µ‚Ü‚·
 //}
 
 
@@ -202,13 +195,13 @@ inline void DisableLight(void){
 inline void DrawString(char *string, CVector3d V, void *font, GLint alignment ){
 	glRasterPos3d(V.x,V.y,V.z);
 	for(; *string; *string++){
-		gl2psTextOpt( string, "Times-Roman", 64, alignment, 0.0f);	//GL2PS—p‚Ìo—ÍiEPS—pj
-		glutBitmapCharacter(font, *string);	//OpenGL—p‚Ìo—ÍiƒEƒCƒ“ƒhƒE—pj
+		gl2psTextOpt( string, "Times-Roman", 64, alignment, 0.0f);
+		glutBitmapCharacter(font, *string);	
 	}
 }
 
 //                                                                   
-//@@@@@@@@ LEGO)—p@@@@@@@@@@@ 
+//ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ LEGOã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
 //                                                                   
 inline void DrawSolidCuboid(CVector3d center , double leng)
 {
@@ -220,7 +213,7 @@ inline void DrawSolidCuboid(CVector3d center , double leng)
 	glPopMatrix();
 }
 //                                                                                                     
-//                    LEGO)—p@                              
+//                    LEGOã€€                              
 //                                                                                                     
 inline void DrawWireCuboid(CVector3d& center , double leng)
 {	
@@ -235,7 +228,7 @@ inline void DrawWireCuboid(CVector3d& center , double leng)
 //                                                                                             
 inline void DrawSolidCuboid(CVector3d& center , double leng, CColor& Vcolor)
 {
-	//ƒ{ƒNƒZƒ‹‚ÌŞ¿İ’è
+	//Voxel material setting
 	GLfloat color[4] ={(float)Vcolor.r, (float)Vcolor.g, (float)Vcolor.b, 0.9f};
 	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
 	
@@ -254,15 +247,15 @@ inline void DrawWireCuboid(CVector3d& center , double leng, CColor& Vcolor)
 	GLfloat color[4] ={(float)Vcolor.r, (float)Vcolor.g, (float)Vcolor.b, 1.0};
 	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
 
-	glPushMatrix();													//‚±‚ê‚ª‚È‚¢‚Æƒ{ƒNƒZƒ‹‚ª–{—ˆ‚ÌˆÊ’u‚És‚©‚È‚¢
-	glTranslated(center.x , center.y , center.z);		//ƒ{ƒNƒZƒ‹‚ÍÅ‰‚ÍŒ´“_‚É‚ ‚é‚Ì‚ÅˆÚ“®‚³‚¹‚é
-	glScaled(1.0, 1.0, scale);									//—§•û‘Ì‚Ì‚˜A‚™A‚š²•ûŒü‚ÌŠg‘åk¬
-	glutWireCube(leng);											//ƒƒCƒ„‚Ì—§•û‘Ì‚ğ•`‚­
-	glPopMatrix();														//‚±‚ê‚ª‚È‚¢‚Æƒ{ƒNƒZƒ‹‚ª–{—ˆ‚ÌˆÊ’u‚És‚©‚È‚¢
+	glPushMatrix();				       
+	glTranslated(center.x , center.y , center.z);   //Move the voxel as it is at the origin at the beginning
+	glScaled(1.0, 1.0, scale);			//Scale of cube in x, y, z axis direction
+	glutWireCube(leng);				//Draw a wire cube
+	glPopMatrix();					//Without this the voxel, it will not go to its original position
 }
 
 //                                                                                             
-//@                LEGO—p@ @@@@@@@
+//ã€€                LEGO ã€€ã€€ã€€ã€€ã€€ã€€ã€€
 //                                                                                             
 inline void DrawSolidBlock(CVector3d center, CVector3d scale)
 {
@@ -273,7 +266,7 @@ inline void DrawSolidBlock(CVector3d center, CVector3d scale)
 	glPopMatrix();
 }
 //                                                                                                     
-//                    ’¼•û‘Ì‚Ìƒ{ƒNƒZƒ‹•`‰æ(LEGO)—p@                              
+//                   For rectangular parallelepiped voxel drawing (LEGO)                             
 //                                                                                                     
 inline void DrawWireBlock(CVector3d center, CVector3d scale)
 {
@@ -284,8 +277,8 @@ inline void DrawWireBlock(CVector3d center, CVector3d scale)
 	glPopMatrix();
 }
 
-//‰~’Œ‚ğ•`‚­
-//d‚Í”¼ŒaAs‚Í’·‚³
+// draw a cylinder
+// d is the radius, s is the length
 inline void DrawCylinder(GLdouble d, GLdouble s){
 	int m = 1, n = 12;
 	double u0, u1, v0;
@@ -305,7 +298,7 @@ inline void DrawCylinder(GLdouble d, GLdouble s){
 	
 }
 
-//‰~‚Ì–Ê‚ğ•`‚­
+// draw the face of the circle
 inline void DrawCircle(GLdouble d, int n){
 	int i;
 	double t;
@@ -319,7 +312,7 @@ inline void DrawCircle(GLdouble d, int n){
 	glEnd();
 }
 
-//‰~‚Ìü‚ğ•`‚­
+//Draw a circle
 inline void DrawCircleLine(GLdouble d, int n){
 	int i;
 	double dt;
@@ -333,7 +326,7 @@ inline void DrawCircleLine(GLdouble d, int n){
 }
 
 
-//”CˆÓ‚ÌˆÊ’u‚Æ•ûŒü‚É‰~‚Ì–Ê‚ğ‘‚­
+//Write a circle face at an arbitrary position and direction
 inline void DrawCircleAnyDirection(CVector3d P, CVector3d N, GLdouble d, int n){
 	N.Normalize(N);
 	double r = acos(N.z);
@@ -344,7 +337,7 @@ inline void DrawCircleAnyDirection(CVector3d P, CVector3d N, GLdouble d, int n){
 	glPopMatrix();
 }
 
-//”CˆÓ‚ÌˆÊ’u‚Æ•ûŒü‚É‰~‚Ìü‚ğ‘‚­
+//Write a circle line at an arbitrary position and direction
 inline void DrawCircleLineAnyDirection(CVector3d P, CVector3d N, GLdouble d, int n){
 	N.Normalize(N);;
 	double r = acos(N.z);
@@ -355,7 +348,7 @@ inline void DrawCircleLineAnyDirection(CVector3d P, CVector3d N, GLdouble d, int
 	glPopMatrix();
 }
 
-//‹…‚ğ•`‚­
+//Draw a sphere
 inline void DrawSphere( CVector3d A, double radius ){
 	int n = 12;
 	glPushMatrix();
@@ -365,8 +358,8 @@ inline void DrawSphere( CVector3d A, double radius ){
 	glPopMatrix();
 }
 
-//‰~’Œ‚Ìü‚ğ•`‚­
-//“_A‚Æ“_B‚ğŒ‹‚Ô‰~’Œ
+// draw a cylinder line
+// cylinder connecting point A and point B
 inline void DrawPipe( CVector3d A, CVector3d B, double radius ){
 	CVector3d C = B - A;
 	double h = C.Norm();
@@ -382,7 +375,6 @@ inline void DrawPipe( CVector3d A, CVector3d B, double radius ){
 }
 
 
-//‰~‚ğ•`‚­
 inline void DrawCone(double r, double h, int n){
 	double t0;
 
@@ -404,10 +396,10 @@ inline void DrawCone(double r, double h, int n){
 
 
 inline void CalcAllowScale(double h, double cr, double ch, double &coner, double &coneh, double &radius){
-	coner = cr*radius;	//‰~‚Ì”¼Œa
-	coneh = ch*coner;	//‰~‚Ì’·‚³
+	coner = cr*radius;	// radius of the cone
+	coneh = ch*coner;	//Length of cone
 
-	//h‚ª’Z‚·‚¬‚éê‡
+	//When h is too short
 	if(0.5*h<coneh){
 		coneh=0.5*h;
 		coner=coneh/ch;
@@ -416,10 +408,10 @@ inline void CalcAllowScale(double h, double cr, double ch, double &coner, double
 }
 
 inline void DrawAllowOpt( CVector3d V, CVector3d T, double h, double radius, double cr, double ch, int n){
-	T.Normalize(T);	//T‚Ì’PˆÊ‰»
+	T.Normalize(T);	//Unitization of T
 
-	double coner;	//‰~‚Ì”¼Œa
-	double coneh;	//‰~‚Ì’·‚³
+	double coner;	
+	double coneh;	
 
 	CalcAllowScale(h,cr,ch,coner,coneh,radius);
 
@@ -444,8 +436,8 @@ inline void DrawAllow( CVector3d V, CVector3d T, double h, double radius){
 }
 
 inline void ClacAllow(CVector3d V, CVector3d T, double h, double &radius, double &coner, CVector3d &Cbot, CVector3d &Ctop){
-	T.Normalize(T);	//T‚Ì’PˆÊ‰»
-	double coneh;	//‰~‚Ì’·‚³
+	T.Normalize(T);
+	double coneh;	
 	CalcAllowScale(h,2.5,1.618*2.0,coner,coneh,radius);
 	Cbot = V + ((h-coneh) * T);
 	Ctop = V + h * T;
@@ -473,14 +465,14 @@ inline CVector3d RotEye(CVector3d Rot, CVector3d View){
 //	return V;
 //}
 
-//À•W‚ğ•¶š—ño—Í
-//¶èŒnÀ•W‚É•ÏŠ·‚µ‚Äo—Í
+// Output coordinate as character string
+// Convert to left handed coordinates and output
 inline string P2S( CVector3d A ){
 	ostringstream B;
 	B << "<" << A.x << "," << A.y << "," << -A.z << ">";
 	return B.str();
 }
-//‰EèŒn‚Ì‚Ü‚Üo—Í
+// Output as right handed type
 inline string P2S_R( CVector3d A ){
 	ostringstream B;
 	B << "<" << A.x << "," << A.y << "," << A.z << ">";
@@ -503,7 +495,7 @@ inline void DrawSphere_Pov( ostringstream &ssPov, CVector3d A, double rs, string
 }
 
 inline void DrawAllow_Pov( ostringstream &ssPov, CVector3d V, CVector3d T, double h, double piper, string material ){
-	if(h>1.0e-14&&piper>1.0e-14&&T.Norm()>1.0e-14){	//¬‚³‚¢‚Ì‚Í•\¦‚µ‚È‚¢
+	if(h>1.0e-14&&piper>1.0e-14&&T.Norm()>1.0e-14){	// Do not display small
 		double coner;	CVector3d Cbot, Ctop;
 		ClacAllow( V, T, h, piper, coner, Cbot, Ctop);
 		ssPov << "cylinder{" << P2S(V) <<", "<< P2S(Cbot) <<"," << piper <<" material{" << material <<"}}"<< endl;
