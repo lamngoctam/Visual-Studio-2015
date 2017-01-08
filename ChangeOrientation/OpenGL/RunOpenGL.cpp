@@ -23,7 +23,7 @@ void OpenGLCallBack4(void);
 
 void OpenGLCallBack_Check(void);
 /***************************************************/
-/*			OpenGL	  */
+/*			OpenGL	                    */
 /***************************************************/
 
 void DisplayInit(){
@@ -47,7 +47,7 @@ void DisplayPostprocessor(){
 
 
 /***************************************************/
-/*			Å@OpenGL	Å@Å@   */
+/*			„ÄÄOpenGL	„ÄÄ„ÄÄ   */
 /***************************************************/
 
 void PickUpInit(int x, int y){
@@ -84,9 +84,9 @@ void PickUpPostprocessor(void){
 
 int SelectHits( GLuint hits, GLuint* buf, int hit_name[2] ){
 	hit_name[0]=-1;
-	hit_name[1]=-1;	//äKëwÇÕÇQ
+	hit_name[1]=-1;	//ÈöéÂ±§„ÅØÔºí
 
-	double depth_min=10.0;	//àÍî‘âú
+	double depth_min=10.0;	//‰∏ÄÁï™Â••
 	double depth_1=1.0;
 	double depth_2=1.0;
 	GLuint depth_name;
@@ -152,8 +152,8 @@ void writefile(int format, int sort, int options, int nbcol,char *filename, char
 	viewport[0] = 0;
 	viewport[1] = 0;
 
-	viewport[2] = GLSettings.m_WindowWidth;//windowïù
-	viewport[3] = GLSettings.m_WindowHeight;//windowçÇÇ≥
+	viewport[2] = GLSettings.m_WindowWidth;
+	viewport[3] = GLSettings.m_WindowHeight;
 
 	fp = fopen(file, "wb");
 
@@ -170,7 +170,6 @@ void writefile(int format, int sort, int options, int nbcol,char *filename, char
 		buffsize += 1024*1024;
 		gl2psBeginPage(file, "gl2psTest", viewport, format, sort, options,GL_RGBA, 0, NULL, nbcol, nbcol, nbcol,buffsize, fp, file);
 
-		//ï`âÊÇ∑ÇÈëãÇ…ÇÊÇ¡ÇƒåƒÇ—èoÇ∑ä÷êîÇÕà·Ç§
 		if(winid==WinID[0]){
 			OpenGLDisplay0();
 		}
@@ -216,10 +215,10 @@ void OpenGLIdle(void){
 void OpenGLInitialize(int WindowID, OpenGL GLSettings, int InitPosiX, int InitPosiY, int WindowWidth, int WindowHeight, char* WindowName){
 	GLSettings.m_WindowHeight = WindowHeight;
 	GLSettings.m_WindowWidth = WindowWidth;
-	glutInitWindowPosition(InitPosiX, InitPosiY);		//ÉEÉCÉìÉhÉEÇÃèâä˙à íu
+	glutInitWindowPosition(InitPosiX, InitPosiY);		
 	glutInitDisplayMode(GLUT_RGBA| GLUT_DOUBLE|GLUT_DEPTH);
-	glutInitWindowSize( WindowWidth, WindowHeight );	//ÉEÉCÉìÉhÉEÇÃÉTÉCÉY
-	WinID[WindowID] = glutCreateWindow(WindowName);		//ÉEÉCÉìÉhÉEÇÃê∂ê¨
+	glutInitWindowSize( WindowWidth, WindowHeight );	// Window size
+	WinID[WindowID] = glutCreateWindow(WindowName);		
 
 }
 
@@ -227,19 +226,18 @@ void OpenGLInitialize(int WindowID, OpenGL GLSettings, int InitPosiX, int InitPo
 /*			   */
 /***************************************************/
 void OpenGLPostprocessor(OpenGL GLSettings){
-	glClearColor( 1.0f, 1.0f, 1.0f, 1.0f);	//îwåiêF
+	glClearColor( 1.0f, 1.0f, 1.0f, 1.0f);	
 	glClearDepth( 1.0f );
-	glEnable    ( GL_DEPTH_TEST );	//âAñ è¡ãé
+	glEnable    ( GL_DEPTH_TEST );	
 	glDepthFunc ( GL_LEQUAL );
-	glShadeModel( GL_SMOOTH );		//ÉXÉÄÅ[ÉXÉVÉFÅ[ÉfÉBÉìÉO
+	glShadeModel( GL_SMOOTH );		
 
 	glMatrixMode( GL_PROJECTION );
 	glLoadIdentity();
 	gluOrtho2D( -GLSettings.m_WindowWidth,  GLSettings.m_WindowWidth, -GLSettings.m_WindowHeight, GLSettings.m_WindowHeight );
 
 	glMatrixMode( GL_MODELVIEW );
-	glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_CONTINUE_EXECUTION);	//É}ÉEÉXÉzÉCÅ[ÉãÇ…ïKóv
-}
+	glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_CONTINUE_EXECUTION);	
 
 
 /***************************************************/
