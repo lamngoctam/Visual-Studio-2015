@@ -1,22 +1,22 @@
 //############################################################################
-//bmpを出力するために必要なファイル
-//OpenGLの描画をそのままbmpとして吐き出せる
-//「Akita National College of Technology Yamamoto's Laboratory」にて
-//公開されているものをコピペ
+//bmp
+//OpenGL
+//uAkita National College of Technology Yamamoto's Laboratory
+//
 //http://akita-nct.jp/yamamoto/comp/OpenGL/OpenGL.html
 //############################################################################
 
 #ifndef GL_SCREENSHOT_H_INCLUDED
 #define GL_SCREENSHOT_H_INCLUDED
 
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <iostream>
 #include <fstream>
 #include <vector>
 
 
 
-// ビットマップのヘッダ
+//
 struct BITMAPFILEHEADER_ {
 	//char bfType1;
 	//char bfType2;
@@ -45,22 +45,22 @@ public:
 	gl_screenshot(){};
 	~gl_screenshot(){};
 
-	// 画面の内容をビットマップファイルに出力
-	//   filename: 出力ファイル名
-	//   bpp: ピクセルあたりのビット数（24, 32）
+	//
+	//   filename:
+	//   bpp:
 	bool screenshot(const char* filename, int bpp=32)	{
-		const int width    = glutGet(GLUT_WINDOW_WIDTH);   // 画像の大きさ
+		const int width    = glutGet(GLUT_WINDOW_WIDTH);   //
 		const int height   = glutGet(GLUT_WINDOW_HEIGHT);
-		// ピクセルデータ全体のサイズ
+		//
 		const int datasize = height*((((width*bpp/8) + 3) >> 2) << 2);
-		// ファイルサイズ
+		//
 		const int filesize = 2 + sizeof(BITMAPFILEHEADER_) + sizeof(BITMAPINFOHEADER_) + datasize;
 
-		// ビットマップのヘッダ
+		//
 		BITMAPFILEHEADER_ bmfh = {filesize, 0, 0, 54,};
 		BITMAPINFOHEADER_ bmih = {40, width, height, 1, bpp, 0, 0, 0, 0, 0, 0,};
 
-		// データのフォーマット
+		//
 		int format;
 		if (bpp == 24) {
 			format = GL_RGB;
@@ -73,18 +73,18 @@ public:
 			return false;
 		}
 
-		// データをもらう
+		//
 		std::vector<GLubyte> buf(datasize);
 		//glPixelStorei(GL_PACK_ALIGNMENT, 1);
 		//glReadBuffer(GL_FRONT);
 		glReadPixels(0, 0, width, height, format, GL_UNSIGNED_BYTE, &buf[0]);
 
-		// RGB → BGR
+		// RGB BGR
 		for (int i=0; i<datasize; i+=bpp/8) {
 			std::swap(buf[i], buf[i+2]);
 		}
 
-		// 出力
+		//
 		std::ofstream fs(filename, std::ios::out | std::ios::trunc | std::ios::binary);
 		if (!fs) {
 			std::cerr << "fstream::open() failed." << std::endl;
@@ -104,4 +104,3 @@ public:
 
 
 #endif
-
